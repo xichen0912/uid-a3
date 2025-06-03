@@ -1,18 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Garden Express</title>
-    <link rel="stylesheet" href="styles.css" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Garden Express</title>
+  <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-  <header class="header">
+
+  <!-- 搜索栏区域 -->
+  <div class="top-search">
     <input type="text" class="search-bar" placeholder="🔍 Search" />
+  </div>
+
+  <!-- 主视觉区域 -->
+  <header class="header">
     <div class="hero-section">
-      <h2>Garden Express Australia</h2>
-      <h1>Beautiful Plants & <span class="highlight">Bulbs</span><br>Delivered to Your Door</h1>
-      <p>From seedlings to seasonal bulbs – everything you need to grow your dream garden, shipped with care.</p>
+      <h2 class="brand-name">Garden Express Australia</h2>
+      <h1 class="hero-heading">
+        Beautiful Plants <span class="accent">& Bulbs</span><br />
+        Delivered to Your <span class="accent">Door</span>
+      </h1>
+      <p class="hero-subtitle">
+        From seedlings to seasonal bulbs <br />everything you need to grow your <br />dream garden, shipped with care
+      </p>
       <div class="hero-buttons">
         <button class="primary-btn">Order now</button>
         <button class="secondary-btn">Learn more</button>
@@ -20,36 +31,52 @@
     </div>
   </header>
 
+  <!-- 图标分类区域 -->
   <section class="categories">
     <h2>Featured Products <a href="#">View all</a></h2>
     <div class="category-list">
-      <div class="category">🌰 Bulbs</div>
-      <div class="category">🍓 Edible produce</div>
-      <div class="category">🌼 Perennials</div>
-      <div class="category">🌳 Trees</div>
+      <div class="category">
+        <img src="icon_bulb.jpg" alt="Bulbs">
+        <span>Bulbs</span>
+      </div>
+      <div class="category">
+        <img src="icon_straw.png" alt="Edible produce">
+        <span>Edible produce</span>
+      </div>
+      <div class="category">
+        <img src="icon_flower.png" alt="Perennials">
+        <span>Perennials</span>
+      </div>
+      <div class="category">
+        <img src="icon_tree.png" alt="Trees">
+        <span>Trees</span>
+      </div>
     </div>
   </section>
 
+  <!-- 产品卡片区域 -->
   <section class="products">
     <h2>Featured Products <a href="#">View all</a></h2>
     <div class="product-list">
       <div class="product">
-        <img src="images/maranta.png" alt="Maranta Kerchoveana" />
+        <img src="product1.png" alt="Maranta Kerchoveana" />
         <p>Maranta Kerchoveana</p>
       </div>
       <div class="product">
-        <img src="images/ctenanthe.png" alt="Ctenanthe Golden Mosaic" />
+        <img src="product2.png" alt="Ctenanthe Golden Mosaic" />
         <p>Ctenanthe Golden Mosaic</p>
       </div>
     </div>
   </section>
 
+  <!-- 底部导航栏 -->
   <footer class="bottom-nav">
     <div>🏠</div>
-    <div>💳</div>
+    <div>💬</div>
     <div>⭕</div>
     <div>🛒</div>
     <div>👤</div>
   </footer>
+
 </body>
 </html>
