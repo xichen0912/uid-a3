@@ -32,13 +32,22 @@ body {
 /* 主视觉 */
 .hero-section {
   background: url("home_page.png") no-repeat center center;
-  background-size: cover;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: top center;
+  
+  height: 320px; 
   padding: 40px 20px;
   text-align: left;
   color: #000;
   border-bottom-left-radius: 20px;
-  border-bottom-right-radius: 20px;
+  border-bottom-right-radius: 10px;
 }
+.hero-text {
+  position: relative;  /* Ensure the container is relative */
+  top: -20px;  /* Adjust the value to move the text up */
+}
+
 
 .brand-name {
   font-size: 18px;
@@ -131,7 +140,7 @@ body {
   margin-top: 8px;
 }
 
-.products h2 {
+.products h2 { 
   font-size: 18px;
   margin-bottom: 12px;
   display: flex;
