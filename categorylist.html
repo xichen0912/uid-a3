@@ -4,94 +4,9 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Garden Express - Categories</title>
+  <link rel="stylesheet" href="css/combined-styles.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: 'Poppins', sans-serif;
-    }
-
-    body {
-      background-color: #fff;
-      padding-bottom: 60px;
-    }
-
-    .top-search {
-      background-color: #4CAF84;
-      padding: 20px;
-      border-bottom-left-radius: 24px;
-      border-bottom-right-radius: 24px;
-      display: flex;
-      justify-content: center;
-    }
-
-    .search-bar {
-      width: 90%;
-      max-width: 500px;
-      padding: 16px 24px;
-      font-size: 18px;
-      border-radius: 20px;
-      border: 2px solid #2e7dff;
-      outline: none;
-      background-color: white;
-      color: #333;
-    }
-
-    .categories {
-      padding: 24px 20px;
-    }
-
-    .categories h2 {
-      font-size: 18px;
-      font-weight: 600;
-      margin-bottom: 20px;
-      color: #333;
-    }
-
-    .category-item {
-      display: flex;
-      align-items: center;
-      background-color: #fff;
-      padding: 12px;
-      margin-bottom: 12px;
-      border: 1px solid #e0e0e0;
-      border-radius: 12px;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.05);
-    }
-
-    .category-item img {
-      width: 40px;
-      height: 40px;
-      margin-right: 16px;
-    }
-
-    .category-item span {
-      font-size: 16px;
-      font-weight: 600;
-      color: #333;
-    }
-
-    .bottom-nav {
-      position: fixed;
-      bottom: 0;
-      width: 100%;
-      height: 60px;
-      background-color: white;
-      border-top: 1px solid #ddd;
-      display: flex;
-      justify-content: space-around;
-      align-items: center;
-      z-index: 999;
-    }
-
-    .bottom-nav i {
-      font-size: 22px;
-      color: #333;
-    }
-  </style>
 </head>
 <body>
   <div class="top-search">
@@ -99,40 +14,43 @@
   </div>
 
   <div class="categories">
-    <h2>Featured Products</h2>
+    <h2 style="margin-bottom: 20px;">Featured Products</h2>
+    <a href="productdetail1.html" style="text-decoration: none;">
+      <div class="category-item">
+        <img src="images/icon_bulb.jpg" alt="Bulbs">
+        <span>Bulbs</span>
+      </div>
+    </a>
+    <a href="productdetail2.html" style="text-decoration: none;">
     <div class="category-item">
-      <img src="icon_bulb.jpg" alt="Bulbs">
-      <span>Bulbs</span>
-    </div>
-    <div class="category-item">
-      <img src="icon_straw.png" alt="Edible produce">
+      <img src="images/icon_straw.png" alt="Edible produce">
       <span>Edible produce</span>
     </div>
+    </a>
     <div class="category-item">
-      <img src="icon_flower.png" alt="Perennials">
+      <img src="images/icon_flower.png" alt="Perennials">
       <span>Perennials</span>
     </div>
     <div class="category-item">
-      <img src="icon_tree.png" alt="Trees">
+      <img src="images/icon_tree.png" alt="Trees">
       <span>Trees</span>
     </div>
     <div class="category-item">
-      <img src="icon_seed.png" alt="Seeds">
+      <img src="images/icon_seed.png" alt="Seeds">
       <span>Seeds</span>
     </div>
     <div class="category-item">
-      <img src="icon_whiteflower.png" alt="Offers & deals">
+      <img src="images/icon_whiteflower.png" alt="Offers & deals">
       <span>Offers &amp; deals</span>
     </div>
   </div>
 
   <div class="bottom-nav">
-    <i class="fa fa-home"></i>
-    <i class="fa fa-credit-card"></i>
-    <i class="fa fa-compass"></i>
-    <i class="fa fa-shopping-cart"></i>
+    <a href="index.html"><i class="fa fa-home"></i></a>
+    <a href="categorylist.html"><i class="fa fa-credit-card"></i></a>
+    <a href="productlist.html"><i class="fa fa-compass"></i></a>
+    <a href="cart2.html"><i class="fa fa-shopping-cart"></i></a>
     <i class="fa fa-user"></i>
   </div>
 </body>
 </html>
-

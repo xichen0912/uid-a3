@@ -1,178 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Lachenalia Quadricolour</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: 'Poppins', sans-serif;
-    }
-
-    body {
-      background-color: #fff;
-      padding-bottom: 80px;
-    }
-
-    .top-search {
-      background-color: #4CAF84;
-      padding: 20px;
-      display: flex;
-      justify-content: center;
-    }
-
-    .search-bar {
-      width: 90%;
-      max-width: 500px;
-      padding: 16px 24px;
-      font-size: 18px;
-      border-radius: 20px;
-      border: 2px solid #2e7dff;
-      outline: none;
-      background-color: white;
-      color: #333;
-    }
-
-    .breadcrumb {
-      padding: 16px 20px;
-      font-size: 14px;
-      color: #666;
-    }
-
-    .breadcrumb b {
-      color: #333;
-    }
-
-    .product-main {
-      padding: 0 20px;
-    }
-
-    .main-image {
-      width: 100%;
-      border-radius: 8px;
-      margin-bottom: 10px;
-    }
-
-    .thumbs {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 10px;
-  margin-bottom: 16px;
-}
-
-.thumbs img {
-  width: 100%;
-  aspect-ratio: 1/1;
-  object-fit: cover;
-  border-radius: 10px;
-  border: 2px solid white;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
-}
-
-
-    h1 {
-      font-size: 20px;
-      font-weight: 600;
-      margin-bottom: 8px;
-      color: #222;
-    }
-
-    .price {
-      font-size: 18px;
-      color: #2d7d4f;
-      font-weight: 600;
-      margin-bottom: 8px;
-    }
-
-    .qty-row {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      margin-bottom: 16px;
-    }
-
-    .qty-label {
-      font-weight: 600;
-    }
-
-    .qty-controls {
-      display: flex;
-      gap: 4px;
-    }
-
-    .qty-controls button {
-      padding: 4px 10px;
-      font-size: 16px;
-    }
-
-    .description-title {
-      font-weight: 600;
-      margin-bottom: 8px;
-    }
-
-    .description {
-      font-size: 14px;
-      line-height: 1.6;
-      color: #444;
-      margin-bottom: 20px;
-    }
-
-    .add-to-cart {
-  padding: 0 20px;
-  margin-bottom: 30px;
-}
-
-.add-to-cart button {
-  width: 100%;
-  padding: 14px 0;
-  background-color: #4CAF84;
-  color: white;
-  border: none;
-  border-radius: 30px;
-  font-size: 16px;
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
-  cursor: pointer;
-}
-
-
-    .bottom-nav {
-      position: fixed;
-      bottom: 0;
-      width: 100%;
-      height: 60px;
-      background-color: white;
-      border-top: 1px solid #ddd;
-      display: flex;
-      justify-content: space-around;
-      align-items: center;
-      z-index: 999;
-    }
-
-    .bottom-nav i {
-      font-size: 22px;
-      color: #333;
-    }
-  </style>
+  <link rel="stylesheet" href="css/combined-styles.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
 </head>
 <body>
   <div class="top-search">
-    <input class="search-bar" type="text" placeholder="Search">
+    <input class="search-bar" type="text" placeholder="Search" />
   </div>
 
   <div class="breadcrumb">
-    <b>Home »Shop » Bulbs » Bulbs</b>
+    <b>Home » Shop » Bulbs » Bulbs</b>
   </div>
 
   <div class="product-main">
-    <img class="main-image" src="2detail1.png" alt="Lachenalia Quadricolour">
+    <img class="main-image" id="pro-main-img" src="images/2detail1.png" alt="Lachenalia Quadricolour" />
     <div class="thumbs">
-      <img src="2detail2.png" alt="thumb1">
-      <img src="2detail3.png" alt="thumb2">
+      <img src="images/2detail2.png" onclick="thumbsBug('images/2detail1.png')" alt="thumb1" />
+      <img src="images/2detail3.png" onclick="thumbsBug('images/2detail3.png')" alt="thumb2" />
     </div>
 
     <h1>Lachenalia Quadricolour</h1>
@@ -181,9 +30,7 @@
     <div class="qty-row">
       <span class="qty-label">Quantity:</span>
       <div class="qty-controls">
-        <button>-</button>
-        <span>1</span>
-        <button>+</button>
+        <button onclick="reduce('pro1')">-</button> <span id="pro1" style="padding: 0px 10px;">1</span> <button onclick="add('pro1')">+</button>
       </div>
     </div>
 
@@ -193,16 +40,35 @@
     </div>
 
     <div class="add-to-cart">
-      <button>Add to Cart</button>
+      <button onclick="toCart()">Add to Cart</button>
     </div>
   </div>
 
   <div class="bottom-nav">
-    <i class="fa fa-home"></i>
-    <i class="fa fa-credit-card"></i>
-    <i class="fa fa-compass"></i>
-    <i class="fa fa-shopping-cart"></i>
+    <a href="index.html"><i class="fa fa-home"></i></a>
+    <a href="categorylist.html"><i class="fa fa-credit-card"></i></a>
+    <a href="productlist.html"><i class="fa fa-compass"></i></a>
+    <a href="cart2.html"><i class="fa fa-shopping-cart"></i></a>
     <i class="fa fa-user"></i>
   </div>
+  <script>
+    function add(item){
+      var proVal = document.getElementById(item).innerText;
+      document.getElementById(item).innerText = (Number(proVal) + 1);
+
+    }
+    function reduce(item){
+      var proVal = document.getElementById(item).innerText;
+      if((Number(proVal) - 1) > 0){
+        document.getElementById(item).innerText = (Number(proVal) - 1);
+      }
+    }
+    function thumbsBug(item){
+      document.getElementById('pro-main-img').src = item;
+    }
+    function toCart() {
+        window.location.href = 'cart2.html';
+    };
+  </script>
 </body>
 </html>

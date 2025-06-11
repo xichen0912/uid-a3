@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
 <html>
 <head>
@@ -10,5 +11,101 @@
   </style>
 </head>
 <body>
+=======
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=390, initial-scale=1.0" />
+  <title>Checkout</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/combined-styles.css">
+</head>
+<body>
+  <div class="wrapper">
+    <div class="top-search">
+      <input class="search-bar" type="text" placeholder="Search" />
+    </div>
+
+    <div class="container" style="padding-top: 36px;">
+      <h2 class="title" style="margin-bottom:20px;">Checkout <span class="subtitle">(<span id="mycartNum">2</span> items)</span></h2>
+
+      <div class="address-box">
+        <p>DELIVER TO</p>
+        <p>581 Swanston Street VIC</p>
+      </div>
+
+      <div class="summary">
+        <h3>Order summary</h3>
+        <div class="summary-row"><span>Subtitle</span><span id="subtitle">$25</span></div>
+        <div class="summary-row"><span>Discount</span><span>0</span></div>
+        <div class="summary-row"><span>Delivery fee</span><span>0</span></div>
+        <div class="summary-row"><strong>Total:</strong><strong id="totalsl">$25</strong></div>
+        <div class="divider"></div>
+      </div>
+
+      <div class="details-box">
+        <h3>Detail</h3>
+        <div class="input-row">
+          <input type="text" placeholder="Given name">
+          <input type="text" placeholder="Surname">
+        </div>
+        <input type="text" placeholder="Phone number" style="margin-bottom: 10px; width: 100%;">
+        <input type="email" placeholder="Email" style="margin-bottom: 16px; width: 100%;">
+
+        <div class="promo">
+          <input type="text" placeholder="Add promo code" />
+          <button>Apply</button>
+        </div>
+
+        <button class="checkout-btn">Checkout</button>
+      </div>
+    </div>
+
+    <div class="bottom-nav">
+      <a href="index.html"><i class="fa fa-home"></i></a>
+      <a href="categorylist.html"><i class="fa fa-credit-card"></i></a>
+      <a href="productlist.html"><i class="fa fa-compass"></i></a>
+      <a href="cart2.html">
+        <i class="fa fa-shopping-cart">
+          <span class="cart-badge" id="mycartNum2">2</span>
+        </i>
+      </a>
+      <i class="fa fa-user"></i>
+    </div>
+  </div>
+  
+  <script>
+    function getTotalPrice(){
+      var totalPrice = localStorage.getItem('totalPrice');
+      var totalNum = localStorage.getItem('totalNum');
+      document.getElementById('mycartNum').innerText = totalNum;
+      document.getElementById('mycartNum2').innerText = totalNum;
+      document.getElementById('totalsl').innerHTML = '$'+ totalPrice;
+      document.getElementById('subtitle').innerHTML = '$'+ totalPrice;
+    }
+    
+    getTotalPrice();
+
+    function add(item){
+      var proVal = document.getElementById(item).innerText;
+      document.getElementById(item).innerText = (Number(proVal) + 1);
+
+    }
+    function reduce(item){
+      var proVal = document.getElementById(item).innerText;
+      if((Number(proVal) - 1) > 0){
+        document.getElementById(item).innerText = (Number(proVal) - 1);
+      }
+    }
+    function thumbsBug(item){
+      document.getElementById('pro-main-img').src = item;
+    }
+    function toCart() {
+        window.location.href = 'cart2.html';
+    };
+  </script>
+>>>>>>> 2578bf6 (replaced old code with newly written one)
 </body>
 </html>

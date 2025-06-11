@@ -6,6 +6,7 @@
   <title>Shopping Cart</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+<<<<<<< HEAD
   <style>
     * {
       margin: 0;
@@ -215,20 +216,29 @@
       justify-content: center;
     }
   </style>
+=======
+  <link rel="stylesheet" href="css/combined-styles.css" />
+>>>>>>> 2578bf6 (replaced old code with newly written one)
 </head>
 <body>
   <div class="top-search">
     <input class="search-bar" type="text" placeholder="Search" />
   </div>
 
+<<<<<<< HEAD
   <div class="container">
     <h2 class="title">My cart <span class="subtitle">(2 items)</span></h2>
+=======
+  <div class="container" style="padding-top: 36px;">
+    <h2 class="title" style="margin-bottom:20px;">My cart <span class="subtitle">(<span id="mycartNum">2</span> items)</span></h2>
+>>>>>>> 2578bf6 (replaced old code with newly written one)
 
     <div class="address-box">
       <p>DELIVER TO</p>
       <p>581 Swanston Street VIC</p>
     </div>
 
+<<<<<<< HEAD
     <h3>Shopping List</h3>
 
     <div class="cart-item">
@@ -243,10 +253,27 @@
         </div>
       </div>
       <i class="fas fa-trash cart-delete"></i>
+=======
+    <h3 style="margin-bottom: 20px;">Shopping List</h3>
+
+    <div class="cart-item">
+      <div class="cart-info">
+        <img src="images/detail1.png" alt="Product 1" />
+        <div style="height: 80px;">
+          <div class="cart-name" style="line-height: 16px;">Lachenalia Quadricolour</div>
+          <div class="cart-price">$10</div>
+          <div class="qty-controls" style="margin-top: 8px;">
+            <button onclick="reduce('pro1')">-</button><span id="pro1" data-price="10">1</span><button onclick="add('pro1')">+</button>
+          </div>
+        </div>
+      </div>
+      <i class="fas fa-trash cart-delete" onclick="del(this)"></i>
+>>>>>>> 2578bf6 (replaced old code with newly written one)
     </div>
 
     <div class="cart-item">
       <div class="cart-info">
+<<<<<<< HEAD
         <img src="monstera-fruit-salad-plant-pplmonfsa.jpg" alt="Product 2" />
         <div>
           <div class="cart-name">Monstera Fruit Salad Plant</div>
@@ -257,25 +284,49 @@
         </div>
       </div>
       <i class="fas fa-trash cart-delete"></i>
+=======
+        <img src="images/monstera-fruit-salad-plant-pplmonfsa.jpg" alt="Product 2" />
+        <div style="height: 80px;">
+          <div class="cart-name" style="line-height: 16px;">Monstera Fruit Salad Plant</div>
+          <div class="cart-price">$15</div>
+          <div class="qty-controls" style="margin-top: 8px;">
+            <button onclick="reduce('pro2')">-</button><span id="pro2" data-price="15">1</span><button onclick="add('pro2')">+</button>
+          </div>
+        </div>
+      </div>
+      <i class="fas fa-trash cart-delete" onclick="del(this)"></i>
+>>>>>>> 2578bf6 (replaced old code with newly written one)
     </div>
 
     <div class="summary">
       <h3>Order summary</h3>
+<<<<<<< HEAD
       <div class="summary-row"><span>Subtitle</span><span>$25</span></div>
       <div class="summary-row"><span>Discount</span><span>0</span></div>
       <div class="summary-row"><span>Delivery fee</span><span>0</span></div>
       <div class="summary-row"><strong>Total:</strong><strong>$25</strong></div>
+=======
+      <div class="summary-row"><span>Subtitle</span><span id="subtitle">$25</span></div>
+      <div class="summary-row"><span>Discount</span><span>0</span></div>
+      <div class="summary-row"><span>Delivery fee</span><span>0</span></div>
+      <div class="summary-row"><strong>Total:</strong><strong id="totalsl">$25</strong></div>
+>>>>>>> 2578bf6 (replaced old code with newly written one)
       <div class="divider"></div>
 
       <div class="promo">
         <input type="text" placeholder="Add promo code" />
         <button>Apply</button>
       </div>
+<<<<<<< HEAD
       <button class="checkout-btn">Checkout</button>
+=======
+      <button class="checkout-btn" onclick="toCheckout()">Checkout</button>
+>>>>>>> 2578bf6 (replaced old code with newly written one)
     </div>
   </div>
 
   <div class="bottom-nav">
+<<<<<<< HEAD
     <i class="fa fa-home"></i>
     <i class="fa fa-credit-card"></i>
     <i class="fa fa-compass"></i>
@@ -284,5 +335,62 @@
     </i>
     <i class="fa fa-user"></i>
   </div>
+=======
+    <a href="index.html"><i class="fa fa-home"></i></a>
+    <a href="categorylist.html"><i class="fa fa-credit-card"></i></a>
+    <a href="productlist.html"><i class="fa fa-compass"></i></a>
+    <i class="fa fa-shopping-cart">
+      <span class="cart-badge" id="mycartNum2">2</span>
+    </i>
+    <i class="fa fa-user"></i>
+  </div>
+  <script>
+    localStorage.setItem('totalPrice', 25);
+    localStorage.setItem('totalNum', 2);
+    function add(item){
+      var proVal = document.getElementById(item).innerText;
+      document.getElementById(item).innerText = (Number(proVal) + 1);
+      this.Total();
+    }
+    function reduce(item){
+      var proVal = document.getElementById(item).innerText;
+      if((Number(proVal) - 1) > 0){
+        document.getElementById(item).innerText = (Number(proVal) - 1);
+        this.Total();
+      }
+    }
+    function Total(){
+      var totalNum = 0;
+      var totalPrice = 0;
+      const element = document.getElementById("pro1");
+      if (element) {
+        var attributeValue = element.getAttribute("data-price");
+        var shuliang = Number(document.getElementById('pro1').innerText);
+        totalNum = shuliang;
+        totalPrice = Number(attributeValue) * shuliang;
+      }
+      const element2 = document.getElementById("pro2");
+      if (element2) {
+        var attributeValue = element2.getAttribute("data-price");
+        var shuliang = Number(document.getElementById('pro2').innerText);
+        totalNum = totalNum + shuliang;
+        totalPrice = (Number(attributeValue) * shuliang) + totalPrice;
+      }
+      document.getElementById('mycartNum').innerText = totalNum;
+      document.getElementById('mycartNum2').innerText = totalNum;
+      document.getElementById('totalsl').innerHTML = '$'+ totalPrice;
+      document.getElementById('subtitle').innerHTML = '$'+ totalPrice;
+      localStorage.setItem('totalPrice', totalPrice);
+      localStorage.setItem('totalNum', totalNum);
+    }
+    function del(benlei){
+      benlei.parentNode.remove();
+      this.Total();
+    }
+    function toCheckout() {
+        window.location.href = 'checkout.html';
+    };
+  </script>
+>>>>>>> 2578bf6 (replaced old code with newly written one)
 </body>
 </html>
