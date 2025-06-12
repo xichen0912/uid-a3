@@ -29,7 +29,9 @@
 .accent {
   color: #4CAF84;
 }
-
+.accentf {
+  color: #fff;
+}
 .hero-subtitle {
   color: #555;
   font-size: 14px;
@@ -1402,4 +1404,313 @@ body {
   border-color: #388E3C; /* 聚焦时更深的绿色 */
   box-shadow: 0 0 4px rgba(76, 175, 132, 0.5);
 }
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  background-color: #f5f5f5;
+}
 
+.search-header {
+  background-color: #50b378;
+  padding: 16px;
+  display: flex;
+  justify-content: center;
+}
+
+.search-bar {
+  width: 90%;
+  max-width: 500px;
+  padding: 12px 20px;
+  border-radius: 12px;
+  border: 2px solid #2e7dff;
+  outline: none;
+  font-size: 16px;
+}
+
+.thank-you-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-image: url('your-leaf-pattern.png'); /* Replace with actual image URL */
+  background-size: cover;
+  background-repeat: no-repeat;
+  min-height: 80vh;
+  padding: 40px 16px;
+}
+
+.thank-you-box {
+  background-color: white;
+  border-radius: 16px;
+  padding: 30px 24px;
+  max-width: 400px;
+  text-align: center;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+}
+
+.thank-you-box h1 {
+  font-size: 22px;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
+.thank-you-box p {
+  font-size: 14px;
+  line-height: 1.6;
+  margin: 10px 0;
+}
+
+.button-group {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 24px;
+  gap: 12px;
+}
+
+.btn {
+  flex: 1;
+  padding: 12px;
+  font-size: 14px;
+  border: none;
+  border-radius: 24px;
+  cursor: pointer;
+}
+
+.view-order {
+  background-color: #888;
+  color: white;
+}
+
+.continue-shopping {
+  background-color: #50b378;
+  color: white;
+}
+
+.footer {
+  text-align: center;
+  font-size: 12px;
+  padding: 16px;
+  background-color: #50b378;
+  color: white;
+}
+.accordion-section {
+  margin: 20px;
+}
+
+.accordion-item {
+  border-radius: 6px;
+  overflow: hidden;
+  margin-bottom: 12px;
+}
+
+.accordion-btn {
+  background-color: #b7f0dc;
+  color: #000;
+  font-weight: 600;
+  font-size: 14px;
+  border: none;
+  padding: 14px;
+  width: 100%;
+  text-align: left;
+  display: flex;
+  justify-content: space-between;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.accordion-btn:hover {
+  background-color: #a3e5cb;
+}
+
+.accordion-content {
+  background-color: #f8f8f8;
+  padding: 12px 14px;
+  display: none;
+  font-size: 13px;
+  color: #333;
+}
+
+.accordion-item.active .accordion-content {
+  display: block;
+}
+
+.accordion-item.active .plus {
+  transform: rotate(45deg);
+}
+.related-section {
+  margin: 24px;
+}
+
+.related-section h3 {
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 12px;
+}
+
+.related-card {
+  background-color: #fff;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+  padding: 0;
+}
+
+.image-wrapper {
+  position: relative;
+}
+
+.image-wrapper img {
+  width: 100%;
+  display: block;
+  border-radius: 8px 8px 0 0;
+}
+
+.sale-badge {
+  position: absolute;
+  top: 8px;
+  left: 8px;
+  background-color: red;
+  color: white;
+  font-size: 12px;
+  font-weight: bold;
+  padding: 2px 8px;
+  border-radius: 4px;
+}
+
+.related-info {
+  padding: 10px 12px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.related-title {
+  font-size: 14px;
+  font-weight: 500;
+  margin: 0;
+}
+
+.price-badge {
+  background-color: #b7f0dc;
+  font-size: 12px;
+  padding: 3px 8px;
+  border-radius: 6px;
+  color: #008040;
+  font-weight: 600;
+}
+
+
+.pc-header{
+  background-color: #4CAF84;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: right;
+  color: #fff;
+}
+.pc-header-item{
+  display: flex; align-items: center;  height: 25px; justify-content: center; margin-right: 30px;
+  cursor: pointer; padding: 20px; border: 1px solid #4CAF84;
+}
+.pc-header-item:hover{
+  border: 1px solid #fff;
+  border-radius: 20px;
+  padding: 20px;
+}
+.pc-header-ative{
+  border: 1px solid #fff;
+  border-radius: 20px;
+  padding: 20px;
+}
+.pc-main{
+  background-color: #fff; height: calc(100vh - 80px); 
+  background: url(images/zwimg/homebj.png) no-repeat; 
+  background-size: 100% 100%;
+}
+
+
+/* 移动端 */
+@media (max-width: 600px) {
+  .mobile {
+    display: block;
+  }
+  .pcduan {
+    display: none;
+  }
+}
+
+@media (min-width: 600px) {
+  .mobile {
+    display: none;
+  }
+  .pcduan {
+    display: block;
+  }
+  body{
+    margin-bottom: 0px;
+    padding-bottom:0px;
+    background-color: #fff;
+  }
+  .categories{
+    background: none;
+    padding: 15px 10px 15px 20px;
+    width: 280px;
+  }
+  .category-list{
+    display: flex;
+    overflow-x: auto;
+    gap: inherit;
+    flex-direction: column;
+    padding:0px;
+  }
+  .category{
+    display: flex;
+    margin-top: 20px;
+    border: 1px solid #d4d4d4;
+    box-shadow: initial;
+    align-items: center;
+    padding-bottom: 5px;
+  }
+  .section-header{
+    padding:0px;
+  }
+  .category img{
+    box-shadow: 1px 1px 10px 1px rgba(0, 0, 0, 0.4);
+    border-radius: 10px;
+  }
+  .category p{
+    margin-left: 10px;
+    font-weight: bold;
+    font-size: 18px;
+  }
+  .order-list{
+    display: flex; justify-content: space-between; padding: 0px 20px; padding-right: 30px;
+    margin-top: 10px;
+  }
+  .pc-bag{
+    background-color: #100d21; width: 45%; height: 45px; color: #fff; 
+    border-radius: 25px; font-size: 12px; line-height: 45px; text-align: center;
+  }
+  .pc-bag2{
+    background-color: #f6f6f6; color: #000; font-weight: bold;
+  }
+  .pc-cart{
+    background-color: #5da98c; height: 50px;
+     line-height: 50px; text-align: center; color: #fff; 
+     margin-top: 20px; border-radius: 25px; 
+     box-shadow: 2px 2px 5px 1px #e7cbd2;
+     position: absolute; bottom: 14px; width: 100%;
+     cursor: pointer;
+  }
+  .pc-xing-box{
+    display: flex; justify-content: end; margin-top: 10px;
+  }
+  .pc-xing{
+    width: 14px; height: 13px; margin-left: 10px;
+  }
+  .pc-line{
+    height: 1px; width: 100%; background-color: #eaeaea; margin-top: 10px;
+  }
+  .pc-footer{
+    background-color: #4CAF84; height: 100px; width: 100%; position: absolute; bottom: 0px;
+  }
+}
