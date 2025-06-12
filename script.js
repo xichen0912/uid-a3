@@ -8,46 +8,56 @@ function Total3(){
     var totalPrice = 0;
     var totalNum = 0;
     proList.forEach(element => {
-    totalPrice += (Number(element.num) * Number(element.proPrice));
-    totalNum += Number(element.num);
+        totalPrice += (Number(element.num) * Number(element.proPrice));
+        totalNum += Number(element.num);
     });
     document.getElementById('mycartNum').innerText = totalNum;
     document.getElementById('mycartNum2').innerText = totalNum;
+    document.getElementById('mycartNum3').innerText = totalNum;
+    
     document.getElementById('totalsl').innerHTML = '$'+ totalPrice;
     document.getElementById('subtitle').innerHTML = '$'+ totalPrice;
+    document.getElementById('totalsl2').innerHTML = '$'+ totalPrice;
+    document.getElementById('subtitle2').innerHTML = '$'+ totalPrice;
     localStorage.setItem('totalPrice', totalPrice);
     localStorage.setItem('totalNum', totalNum);
     localStorage.setItem('cartArray', JSON.stringify(proList));
 }
-function add(item,id){
+function add(id){
     let index = proList.findIndex(item => item.proId === Number(id));
     if (index !== -1) {
-    proList[index].num += 1;
+        proList[index].num += 1;
     }
     document.getElementById('shuliang' + id).innerText = proList[index].num;
     this.Total3();
 }
-function reduce(item,id){
+function reduce(id){
     let index = proList.findIndex(item => item.proId === Number(id));
     if (index !== -1) {
-    if(proList[index].num - 1 > 0){
-        proList[index].num = proList[index].num - 1;
-    }
+        if(proList[index].num - 1 > 0){
+            proList[index].num = proList[index].num - 1;
+        }
     }
     document.getElementById('shuliang' + id).innerText = proList[index].num;
     this.Total3();
 }
-function add2(item){
-    var proVal = document.getElementById(item).innerText;
-    document.getElementById(item).innerText = (Number(proVal) + 1);
-    this.Total2();
-}
-function reduce2(item){
-    var proVal = document.getElementById(item).innerText;
-    if((Number(proVal) - 1) > 0){
-    document.getElementById(item).innerText = (Number(proVal) - 1);
-    this.Total2();
+function add2(id){
+    let index = proList.findIndex(item => item.proId === Number(id));
+    if (index !== -1) {
+        proList[index].num += 1;
     }
+    document.getElementById('shuliang2' + id).innerText = proList[index].num;
+    this.Total3();
+}
+function reduce2(id){
+    let index = proList.findIndex(item => item.proId === Number(id));
+    if (index !== -1) {
+        if(proList[index].num - 1 > 0){
+            proList[index].num = proList[index].num - 1;
+        }
+    }
+    document.getElementById('shuliang2' + id).innerText = proList[index].num;
+    this.Total3();
 }
 function Total(){
     var totalNum = 0;
@@ -97,7 +107,7 @@ function Total2(){
     localStorage.setItem('totalPrice', totalPrice);
     localStorage.setItem('totalNum', totalNum);
 }
-function del(benlei,id){
+function del(id){
     let index = proList.findIndex(item => item.proId === Number(id));
     if (index !== -1) {
     proList.splice(index,1);
@@ -105,7 +115,7 @@ function del(benlei,id){
     this.Total3();
     document.getElementById('cartItem' + id).remove();
 }
-function del2(benlei,id){
+function del2(id){
     let index = proList.findIndex(item => item.proId === Number(id));
     if (index !== -1) {
     proList.splice(index,1);
@@ -133,13 +143,13 @@ function lordJiaz(){
     shopListMobHtml += '      <div class="cart-name" style="line-height: 16px;">'+ element.proName +'</div>';
     shopListMobHtml += '      <div class="cart-price">$'+ element.proPrice +'</div>';
     shopListMobHtml += '      <div class="qty-controls" style="margin-top: 8px;">';
-    shopListMobHtml += '        <button onclick="reduce(this,'+ element.proId +')" data-id="'+ element.proId +'">-</button>';
+    shopListMobHtml += '        <button onclick="reduce('+ element.proId +')" data-id="'+ element.proId +'">-</button>';
     shopListMobHtml += '        <span id="shuliang'+ element.proId +'" class="shuliang">'+ element.num +'</span>';
-    shopListMobHtml += '        <button onclick="add(this,'+ element.proId +')" data-id="'+ element.proId +'">+</button>';
+    shopListMobHtml += '        <button onclick="add('+ element.proId +')" data-id="'+ element.proId +'">+</button>';
     shopListMobHtml += '      </div>';
     shopListMobHtml += '    </div>';
     shopListMobHtml += '  </div>';
-    shopListMobHtml += '  <i class="fas fa-trash cart-delete" onclick="del(this,'+ element.proId +')" data-id="'+ element.proId +'"></i>';
+    shopListMobHtml += '  <i class="fas fa-trash cart-delete" onclick="del('+ element.proId +')" data-id="'+ element.proId +'"></i>';
     shopListMobHtml += '</div>';
 
 
@@ -153,11 +163,11 @@ function lordJiaz(){
     shopListHtml += '  </div>';
     shopListHtml += '  <div style="display: flex; align-items: center;">';
     shopListHtml += '    <div class="qty-controls" style="margin-top: 0px; margin-right: 20px;">';
-    shopListHtml += '      <button onclick="reduce2(this,'+ element.proId +')" data-id="'+ element.proId +'">-</button>';
-    shopListHtml += '      <span class="shuliang2" style="padding: 0px 8px;">'+ element.num +'</span>';
-    shopListHtml += '      <button onclick="add2(this,'+ element.proId +')" data-id="'+ element.proId +'">+</button>';
+    shopListHtml += '      <button onclick="reduce2('+ element.proId +')" data-id="'+ element.proId +'">-</button>';
+    shopListHtml += '      <span id="shuliang2'+ element.proId +'" style="padding: 0px 8px;">'+ element.num +'</span>';
+    shopListHtml += '      <button onclick="add2('+ element.proId +')" data-id="'+ element.proId +'">+</button>';
     shopListHtml += '    </div>';
-    shopListHtml += '    <img src="images/zwimg/del.png" onclick="del2(this,'+ element.proId +')" data-id="'+ element.proId +'" style="width: 30px; height: 30px;" />';
+    shopListHtml += '    <img src="images/zwimg/del.png" onclick="del2('+ element.proId +')" data-id="'+ element.proId +'" style="width: 30px; height: 30px;" />';
     shopListHtml += '  </div>';
     shopListHtml += '</div>';
     
