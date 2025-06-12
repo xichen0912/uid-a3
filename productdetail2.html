@@ -139,15 +139,17 @@
         </div>
       </div>
     </div>
-  
+    
+    <footer class="footer">
+      © 2025 GardenExpress All rights reserved.
+    </footer>
   </div>
   <div class="pcduan" style="width: 1368px; margin: auto;" id="pcduan">
     <div class="pc-header">
       <div class="pc-header-item" onclick="onToUrl('index.html')">Home</div>
-      <div class="pc-header-item" onclick="onToUrl('index.html')">About</div>
-      <div class="pc-header-item">
-        <div style="height: 16px;"><img src="images/zwimg/xin.png" style="width: 18px; height: 16px;" /></div>
-        <div style="margin-left: 10px;">My Favorites</div>
+      <div class="pc-header-item" >About</div>
+      <div class="pc-header-item" onclick="onToUrl('productlist.html')">
+        <div style="margin-left: 10px;">Categories</div>
       </div>
       <div class="pc-header-item" onclick="onToUrl('cart2.html')">
         <div style="height: 16px;"><img src="images/zwimg/cart.png" style="width: 20px; height: 20px;" /></div>
@@ -193,17 +195,105 @@
             <div class="description" style="margin-top: 10px;">
               Lachenalia Quadricolour (Lachenalia aloides var quadricoloura), also known as ‘Soldier Boys’, is a stunning, low-maintenance plant that adds vibrant color and elegance to any space. With its unique gradient blooms in shades of red, orange, yellow with dark tips, this compact beauty is perfect for indoor or outdoor settings. Thriving in winter and spring, it’s a seasonal showstopper that brightens up your home or garden with minimal care. Rare and captivating, the Lachenalia quadricolor is the perfect way to elevate your plant collection or gift something truly special. Don’t miss out on this botanical gem!
             </div>
-            <div style="display: flex; justify-content: space-between;">
+            <!-- <div style="display: flex; justify-content: space-between;">
               <div class="pc-bag">Add to Bag</div>
               <div class="pc-bag pc-bag2" >Add to My Favorites</div>
+            </div> -->
+            <div class="pc-cart" onclick="toCart()" style="position: relative;  margin-top: 50px;">Add to Cart</div>
+
+            <div class="accordion-section">
+              <h3>Product Information</h3>
+            
+              <div class="accordion-item">
+                <button class="accordion-btn" onclick="aitem(5)" >Guarantee <span class="plus" id="aitem5">+</span></button>
+                <div class="accordion-content" id="aitemContent5">
+                  <p>
+                    At Garden Express, we want to ensure that you have a positive purchasing experience. On the off chance your plants get stuck in the mail or haven’t arrived in the best condition, we ask that you reach out to us promptly with any concerns or issues. You can contact us via email at info@gardenexpress.com.au or by phone at 03 9751 9498, Monday to Friday 8:30 AM – 5:00 PM Australian EST, contacting us through social media platforms may be less reliable, so we encourage you to use our email.
+                  </p>
+                  <p>
+                    Please note that it’s important to get in touch with our customer service team within 7 days of receiving your order if you have any concerns as claims regarding arrival condition after 7 days of arrival will not be recognised.  
+                  </p>
+                  <p>
+                    Please also remember not to dispose of any items until you’ve spoken to us, as to be eligible for a replacement, credit, or refund, we may request photos or additional information for any item(s) in question.
+                  </p>
+                  <p>
+                    If you need to make a return, please contact our Customer Service department via email at info@gardenexpress.com.au or by phone at 03 9751 9498 for authorisation before proceeding. Once again contacting us through social media platforms may be less reliable, so we encourage you to use our email or phone number for a smoother experience.
+                  </p>
+                  <p>
+                    It is also important to mention that discounted ‘end-of-season’ stock is sold on an ‘as is’ basis and is exempt from this guarantee. While this stock is generally sound, we recommend planting these items as soon as possible.
+                  </p>
+                </div>
+              </div>
+            
+              <div class="accordion-item">
+                <button class="accordion-btn" onclick="aitem(6)" data-val="6">Delivery Details <span class="plus" id="aitem6">+</span></button>
+                <div class="accordion-content" id="aitemContent6">
+                  <p>Our team packs and dispatches each day based on the best timing of delivery service to your state.  This way we can ensure your order is in transit for the shortest time possible.</p>
+                  <p>Delivery is normally via Australia Post with larger orders delivered via StarTrack Express* courier. We service virtually all areas of Australia with only those areas not serviced by these organisations being excluded (e.g. remote islands and Territories such as Christmas Island, Lord Howe Island, Norfolk Island, Cocos Islands, Groote Eylandt). We do not deliver outside Australia but happily deliver orders placed from overseas for Australian delivery. Our regular delivery charge for basic items is $12.50 Australia-wide, regardless of the number of items ordered. Due to their higher freight costs, bulky or heavy products such as roses, large pots and a small number of hard goods have higher delivery charges. The summary of all current delivery options is:</p>
+                  <p>1. Basic Postage $12.50: Applies to orders NOT containing Roses, 120mm and larger pots/grow-bags, Bare-rooted Trees, Composting Buckets, nor any items with individually specified delivery charges, all delivered at one time, will incur the normal $12.50 freight charge. These items are referred to as “Basic Items“.</p>
+                  <p>2. Roses & Larger Potted Items $16.90: Applies to orders containing bush Roses, 120mm up to 155mm pot/grow-bags, Composting Buckets, together with other products delivered at the same time will incur a $16.90 freight charge.  **Please Note: Multiples of these items may incur a larger freight fee depending on the quantity of pots in the order; this will be calculated at the checkout.</p>
+
+                </div>
+              </div>
+            
+              <div class="accordion-item">
+                <button class="accordion-btn" onclick="aitem(7)" data-val="1">Planting & Growing Guide - Calla Lily <span class="plus" id="aitem7">+</span></button>
+                <div class="accordion-content" id="aitemContent7">
+                  <p>Common Name: LACHENALIA</p>
+                  <p>Also known as: Soldier Boys</p>
+                  <p>Botanical Name: Lachenalia</p>
+                  <p>Family Name: Hyacinthaceae</p>
+                  <p>Plant Type: Bulb</p>
+                  <p>Size: 20cm H x 10cm W</p>
+                  <p>Planting Time: Autumn</p>
+                  <p>Planting Width: 7cm Depth: 5cm</p>
+                  <p>Flowering: Spring</p>
+                  <p>Positioning: Full sun to light shade</p>
+                  <p>General Information: Suitable for all climates except tropical. Will tolerate temperatures down to 0°C.</p>
+                  <p>Watering: Water when the growth appears and keeps the soil slightly wet until the foliage dies off after flowering. When the bulbs are dormant keep them relatively dry.</p>
+                  <p>Fertilising: Animal manure or compost should be worked through soil before planting.</p>
+                  <p>Soil: Will grow in any well-drained soil.</p>
+                  <p>Lifting & Storage: Bulbs can be left in the ground for many years.</p>
+                  <p>Pests: Generally free from pests and diseases.</p>
+                  <p>Tips: Excellent for borders, drifts or pots and containers. Combines beautifully with blue Muscari.</p>
+                </div>
+              </div>
+            
+              <div class="accordion-item">
+                <button class="accordion-btn" onclick="aitem(8)" data-val="1">Climate Map <span class="plus" id="aitem8">+</span></button>
+                <div class="accordion-content" id="aitemContent8">
+                  <p>
+                    <img src="images/map.png" style="width: 100%; height: auto;"/>
+                  </p>
+                  <p>Establish which coloured region you live in and then consider the varieties listed as typically suited to that area. The Australian Climate Guide map is intended as a guide only as climatic conditions vary between specific locations. Factors such as local altitude, wind and the proximity of hills, mountains and bodies of water can cause variations from the generalised climate map. Note also that although a plant may be listed as suitable for a particular region, it may still require protection from extremes such as frost or strong winds. You should also consider its requirements for sun, shade and water.</p>
+                  <p>Remember that you can often extend the range of plants that you can grow by creating micro-climates within your garden. Planting under trees, beside brick walls or in the shelter of a building, on high or low points in the garden can all have an effect. Even planting by a pond or surrounded by rocks can be used to advantage. Part of the joy of gardening can be experimenting and nothing is more pleasing that achieving success with a plant that is not usually seen in your area.</p>
+
+                </div>
+              </div>
             </div>
-            <div class="pc-cart" onclick="toCart()">Add to Cart</div>
+
+            <div class="related-section">
+              <h3>Looks great in the garden with...</h3>
+              
+              <div class="related-card">
+                <div class="image-wrapper">
+                  <span class="sale-badge">Sale</span>
+                  <img src="images/zwimg/info2.png" alt="Calla Lily Mix" />
+                </div>
+                <div class="related-info">
+                  <p class="related-title">Cyclamen Illusia</p>
+                  <span class="price-badge">$15.90</span>
+                </div>
+              </div>
+            </div>
+
           </div>
         </div>
-
-        
-        <div class="pc-footer"></div>
+        <!-- <div class="pc-footer"></div> -->
     </div>
+    <footer class="footer">
+      © 2025 GardenExpress All rights reserved.
+    </footer>
   </div>
   <script>
     function onToUrl(itemUrl){

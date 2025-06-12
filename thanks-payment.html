@@ -7,21 +7,39 @@
   <link rel="stylesheet" href="combined-styles.css" />
 </head>
 <body>
+  <div class="mobile" style="width: 100%;" id="mobile">
   <header class="search-header">
     <input type="text" class="search-bar" placeholder="Search" />
   </header>
+  </div>
+  <div class="pcduan" style="width: 100%;" id="pcduan">
+    <div class="pc-header">
+      <div class="pc-header-item" onclick="onToUrl('index.html')">Home</div>
+      <div class="pc-header-item">About</div>
+      <div class="pc-header-item" onclick="onToUrl('productlist.html')">
+        <div style="margin-left: 10px;">Categories</div>
+      </div>
+      <div class="pc-header-item" onclick="onToUrl('cart2.html')">
+        <div style="height: 16px;"><img src="images/zwimg/cart.png" style="width: 20px; height: 20px;" /></div>
+        <div style="margin-left: 10px;">My Cart</div>        
+      </div>
+      <div class="pc-header-item pc-header-ative">Contact us</div>
+    </div>
+    
+  </div>
 
   <main class="thank-you-container">
     <div class="thank-you-box">
       <h1>Thank you for your payment!</h1>
-      <p>Your payment of $45.00 was successful</p>
+      <p>Your payment of <span id="totalsl">$45.00</span> was successful</p>
       <p><strong>Order Number:</strong> #8675309</p>
-      <p>A confirmation email has been sent to<br />yourname@email.com.</p>
+      <p>A confirmation email has been sent to<br />
+        <span id="Email">yourname@email.com</span>.</p>
       <p>If you have any questions, feel free to<br />contact our support team</p>
 
       <div class="button-group">
         <button class="btn view-order">View Order</button>
-        <button class="btn continue-shopping">Continue Shopping</button>
+        <button class="btn continue-shopping" onclick="toIndex()">Continue Shopping</button>
       </div>
     </div>
   </main>
@@ -29,5 +47,22 @@
   <footer class="footer">
     © 2025 GardenExpress All rights reserved.
   </footer>
+   <script>
+    function getTotalPrice(){
+      var totalPrice = localStorage.getItem('totalPrice');
+      var emailVal = localStorage.getItem('Email');
+      document.getElementById('Email').innerText = emailVal;
+      document.getElementById('totalsl').innerHTML = '$'+ totalPrice;
+    }
+    
+    getTotalPrice();
+    
+    function onToUrl(itemUrl){
+      window.location.href = itemUrl;
+    }
+    function toIndex() {
+        window.location.href = 'index.html';
+    };
+   </script>
 </body>
 </html>

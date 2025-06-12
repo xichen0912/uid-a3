@@ -67,7 +67,10 @@
         <button class="checkout-btn" onclick="toCheckout()">Checkout</button>
       </div>
     </div>
-
+    
+    <footer class="footer">
+      © 2025 GardenExpress All rights reserved.
+    </footer>
     <div class="bottom-nav">
       <a href="index.html"><i class="fa fa-home"></i></a>
       <a href="categorylist.html"><i class="fa fa-credit-card"></i></a>
@@ -81,10 +84,9 @@
   <div class="pcduan" style="width: 1368px; margin: auto;" id="pcduan">
     <div class="pc-header">
       <div class="pc-header-item" onclick="onToUrl('index.html')">Home</div>
-      <div class="pc-header-item" onclick="onToUrl('index.html')">About</div>
-      <div class="pc-header-item">
-        <div style="height: 16px;"><img src="images/zwimg/xin.png" style="width: 18px; height: 16px;" /></div>
-        <div style="margin-left: 10px;">My Favorites</div>
+      <div class="pc-header-item">About</div>
+      <div class="pc-header-item" onclick="onToUrl('productlist.html')">
+        <div style="margin-left: 10px;">Categories</div>
       </div>
       <div class="pc-header-item" onclick="onToUrl('cart2.html')">
         <div style="height: 16px;"><img src="images/zwimg/cart.png" style="width: 20px; height: 20px;" /></div>
@@ -93,12 +95,12 @@
       <div class="pc-header-item pc-header-ative">Contact us</div>
     </div>
 
-    <div class="pc-main" style="background: none; overflow: auto; position: relative;">
-        <div style="padding: 30px;">
+    <div class="pc-main" style="background: none;  position: relative;">
+        <div style="padding: 30px; overflow: auto;">
           <div style="display: flex;">
             <div style="width: 60%;">
               <div style="display: flex; justify-content: space-between;">
-                <h2 class="title" style="margin-bottom:20px;">My cart <span class="subtitle">(<span id="mycartNum">2</span> items)</span></h2>
+                <h2 class="title" style="margin-bottom:20px;">My cart <span class="subtitle">(<span id="mycartNum3">2</span> items)</span></h2>
                 <div>
                   <img src="images/zwimg/guan.png" style="width: 80px; height: auto; margin-right: 20px;" />
                 </div>
@@ -125,9 +127,9 @@
                 </div>
                 <div style="display: flex; align-items: center;">
                   <div class="qty-controls" style="margin-top: 0px; margin-right: 20px;">
-                    <button onclick="reduce('pro3')">-</button>
-                    <span id="pro3" data-price="10">1</span>
-                    <button onclick="add('pro3')">+</button>
+                    <button onclick="reduce2('pro3')">-</button>
+                    <span id="pro3" data-price="10" style="padding: 0px 8px;">1</span>
+                    <button onclick="add2('pro3')">+</button>
                   </div>
                   <img src="images/zwimg/del.png" onclick="del2(this)" style="width: 30px; height: 30px;" />
                 </div>
@@ -144,9 +146,9 @@
                 </div>
                 <div style="display: flex; align-items: center;">
                   <div class="qty-controls" style="margin-top: 0px; margin-right: 20px;">
-                    <button onclick="reduce('pro4')">-</button>
-                    <span id="pro4" data-price="15">1</span>
-                    <button onclick="add('pro4')">+</button>
+                    <button onclick="reduce2('pro4')">-</button>
+                    <span id="pro4" data-price="15" style="padding: 0px 8px;">1</span>
+                    <button onclick="add2('pro4')">+</button>
                   </div>
                   <img src="images/zwimg/del.png" onclick="del2(this)" style="width: 30px; height: 30px;" />
                 </div>
@@ -156,11 +158,11 @@
             <div style="width: 40%;">
               <div class="summary">
                 <h3>Order summary</h3>
-                <div class="summary-row"><span>Subtitle</span><span id="subtitle">$25</span></div>
+                <div class="summary-row"><span>Subtitle</span><span id="subtitle2">$25</span></div>
                 <div class="summary-row"><span>Discount</span><span>0</span></div>
                 <div class="summary-row"><span>Delivery fee</span><span>0</span></div>
                 <div class="divider"></div>
-                <div class="summary-row"><strong>Total:</strong><strong id="totalsl">$25</strong></div>
+                <div class="summary-row"><strong>Total:</strong><strong id="totalsl2">$25</strong></div>
                 
                 <h3>Detail</h3>
                 <div class="promo" style="display: flex; justify-content: space-between;">
@@ -187,8 +189,10 @@
           </div>
         </div>
         
-        <div class="pc-footer"></div>
     </div>
+    <footer class="footer">
+      © 2025 GardenExpress All rights reserved.
+    </footer>
   </div>
   <script>
     localStorage.setItem('totalPrice', 25);
@@ -206,6 +210,18 @@
       if((Number(proVal) - 1) > 0){
         document.getElementById(item).innerText = (Number(proVal) - 1);
         this.Total();
+      }
+    }
+    function add2(item){
+      var proVal = document.getElementById(item).innerText;
+      document.getElementById(item).innerText = (Number(proVal) + 1);
+      this.Total2();
+    }
+    function reduce2(item){
+      var proVal = document.getElementById(item).innerText;
+      if((Number(proVal) - 1) > 0){
+        document.getElementById(item).innerText = (Number(proVal) - 1);
+        this.Total2();
       }
     }
     function Total(){
@@ -232,13 +248,37 @@
       localStorage.setItem('totalPrice', totalPrice);
       localStorage.setItem('totalNum', totalNum);
     }
+    function Total2(){
+      var totalNum = 0;
+      var totalPrice = 0;
+      const element = document.getElementById("pro3");
+      if (element) {
+        var attributeValue = element.getAttribute("data-price");
+        var shuliang = Number(document.getElementById('pro3').innerText);
+        totalNum = shuliang;
+        totalPrice = Number(attributeValue) * shuliang;
+      }
+      const element2 = document.getElementById("pro4");
+      if (element2) {
+        var attributeValue = element2.getAttribute("data-price");
+        var shuliang = Number(document.getElementById('pro4').innerText);
+        totalNum = totalNum + shuliang;
+        totalPrice = (Number(attributeValue) * shuliang) + totalPrice;
+      }
+      document.getElementById('mycartNum3').innerText = totalNum;
+      // document.getElementById('mycartNum2').innerText = totalNum;
+      document.getElementById('totalsl2').innerHTML = '$'+ totalPrice;
+      document.getElementById('subtitle2').innerHTML = '$'+ totalPrice;
+      localStorage.setItem('totalPrice', totalPrice);
+      localStorage.setItem('totalNum', totalNum);
+    }
     function del(benlei){
       benlei.parentNode.remove();
       this.Total();
     }
     function del2(benlei){
       benlei.parentNode.parentNode.remove();
-      this.Total();
+      this.Total2();
     }
     function toCheckout() {
         window.location.href = 'checkout.html';
