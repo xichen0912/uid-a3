@@ -1743,5 +1743,7 @@ body {
     min-height: 80vh;
     padding: 40px 16px;
   }
-
+  .pc-orderlistbox{
+    width: 31%; margin-top: 10px; margin-right: 20px; float: left;
+  }
 }

@@ -165,103 +165,105 @@
             <div style=" margin-right: 10px;">sale</div>
             <div style="height: 14px; margin-top: -5px; margin-right: 25px;"><img src="images/zwimg/shangxia.png" style="width: 9px; height: 14px;" /></div>
             <div style=" margin-right: 10px; display: flex; align-items: center; border: 1px solid #798ce7; width: 250px; padding: 0px 10px; border-radius: 10px;">
-              <img src="images/zwimg/fdj.png" style="width: 20px; height: 20px;" />
+              <img src="images/zwimg/fdj.png" style="width: 20px; height: 20px; cursor: pointer;" onclick="onSearch()" />
               <div style="margin-left: 10px;">
-                <input style="border: none; background-color: #f5f5f5; height: 40px; width: 200px;" type="text" placeholder="Search" />
+                <input style="border: none; background-color: #f5f5f5; height: 40px; width: 200px;" id="iptSearch" type="text" placeholder="Search" />
               </div>
             </div>
             <div style="height: 40px;"><img src="images/zwimg/gengduo.png" style="width: 38px; height: 40px;" /></div>
           </div>
         </div>
-        <div class="order-list">
-          <div style="width: 32%;">
-            <a href="productdetail1.html" style="text-decoration: none; width: 100%; display: inline-block;">
-            <img src="images/zwimg/pro1.png"  style="width: 100%;" alt="Monstera">
-            <div class="product-info" style="display: flex; justify-content: space-between;">
-              <div class="product-title" style="width: 60%;">Monstera Fruit Salad Plant Starter Plant</div>
-              <div class="price-badge" style="height: 26px;">$10.00</div>
-            </div>
-            </a>
-          </div>
-          <div style="width: 32%;">
-            <a href="productdetail2.html" style="text-decoration: none; width: 100%; display: inline-block;">
-            <img src="images/zwimg/pro9.png"  style="width: 100%;" alt="Monstera">
-            <div class="product-info" style="display: flex; justify-content: space-between;">
-              <div class="product-title" style="width: 70%;">Lachenalia Quadricolour</div>
-              <div class="price-badge" style="height: 26px;">$15.00</div>
-            </div>
-            </a>
-          </div>
-          <div style="width: 32%;">
-            <a href="#" style="text-decoration: none; width: 100%; display: inline-block;">
-            <img src="images/zwimg/pro2.png" style="width: 100%;" alt="Monstera">
-            <div class="product-info" style="display: flex; justify-content: space-between;">
-              <div class="product-title" style="width: 60%;">Pothos Variegated Devils Ivy</div>
-              <div class="price-badge" style="height: 26px;">$45.00</div>
-            </div>
-            </a>
-          </div>
-        </div>
-        <div class="order-list">
-          <div style="width: 32%;">
-            <a href="#" style="text-decoration: none; width: 100%; display: inline-block;">
-            <img src="images/zwimg/pro3.png" style="width: 100%;" alt="Monstera">
-            <div class="product-info" style="display: flex; justify-content: space-between;">
-              <div class="product-title" style="width: 70%;">Syngonium Red Beauty</div>
-              <div style="display: flex; align-items: center;">
-                <div style="height: 26px; color: #000; font-size: 12px; line-height: 26px; text-decoration: line-through;">$40.00</div>
-                <div class="price-badge" style="height: 26px; margin-left: 8px; background-color: #FFA3A3; color:#fff;">$20.00</div>
+        <div style="width: 1110px; padding: 0px 0px 0px 20px; padding-right: 0px; clear: both;" id="orderListHtml">
+          <!-- <div class="order-list"> -->
+            <div class="pc-orderlistbox">
+              <a href="productdetail1.html" style="text-decoration: none; width: 100%; display: inline-block;">
+              <img src="images/zwimg/pro1.png"  style="width: 100%;" alt="Monstera">
+              <div class="product-info" style="display: flex; justify-content: space-between; height: 68px;">
+                <div class="product-title" style="width: 60%;">Monstera Fruit Salad Plant Starter Plant</div>
+                <div class="price-badge" style="height: 26px;">$10.00</div>
               </div>
+              </a>
             </div>
-            </a>
-          </div>
-          <div style="width: 32%;">
-            <a href="#" style="text-decoration: none; width: 100%; display: inline-block;">
-            <img src="images/zwimg/pro0.png" style="width: 100%;" alt="Monstera">
-            <div class="product-info" style="display: flex; justify-content: space-between;">
-              <div class="product-title" style="width: 60%;">Ctenanthe Golden Mosaic</div>
-              <div class="price-badge" style="height: 26px;">$14.99</div>
+            <div class="pc-orderlistbox">
+              <a href="productdetail2.html" style="text-decoration: none; width: 100%; display: inline-block;">
+              <img src="images/zwimg/pro9.png"  style="width: 100%;" alt="Monstera">
+              <div class="product-info" style="display: flex; justify-content: space-between; height: 68px;">
+                <div class="product-title" style="width: 70%;">Lachenalia Quadricolour</div>
+                <div class="price-badge" style="height: 26px;">$15.00</div>
+              </div>
+              </a>
             </div>
-            </a>
-          </div>
-          <div style="width: 32%;">
-            <a href="#" style="text-decoration: none; width: 100%; display: inline-block;">
-            <img src="images/zwimg/pro4.png" style="width: 100%;" alt="Monstera">
-            <div class="product-info" style="display: flex; justify-content: space-between;">
-              <div class="product-title" style="width: 70%;">Syngonium Robusta</div>
-              <div class="price-badge" style="height: 26px;">$24.99</div>
+            <div class="pc-orderlistbox">
+              <a href="#" style="text-decoration: none; width: 100%; display: inline-block;">
+              <img src="images/zwimg/pro2.png" style="width: 100%;" alt="Monstera">
+              <div class="product-info" style="display: flex; justify-content: space-between; height: 68px;">
+                <div class="product-title" style="width: 60%;">Pothos Variegated Devils Ivy</div>
+                <div class="price-badge" style="height: 26px;">$45.00</div>
+              </div>
+              </a>
             </div>
-            </a>
-          </div>
-        </div>
-        <div class="order-list">
-          <div style="width: 32%;">
-            <a href="#" style="text-decoration: none; width: 100%; display: inline-block;">
-            <img src="images/zwimg/pro5.png" style="width: 100%;" alt="Monstera">
-            <div class="product-info" style="display: flex; justify-content: space-between;">
-              <div class="product-title" style="width: 70%;">Polystichum Mother Shield Fern</div>
-              <div class="price-badge" style="height: 26px;">$45.00</div>
+          <!-- </div> -->
+          <!-- <div class="order-list"> -->
+            <div class="pc-orderlistbox">
+              <a href="#" style="text-decoration: none; width: 100%; display: inline-block;">
+              <img src="images/zwimg/pro3.png" style="width: 100%;" alt="Monstera">
+              <div class="product-info" style="display: flex; justify-content: space-between; height: 68px;">
+                <div class="product-title" style="width: 70%;">Syngonium Red Beauty</div>
+                <div style="display: flex;">
+                  <div style="height: 26px; color: #000; font-size: 12px; line-height: 26px; text-decoration: line-through;">$40.00</div>
+                  <div class="price-badge" style="height: 26px; margin-left: 8px; background-color: #FFA3A3; color:#fff;">$20.00</div>
+                </div>
+              </div>
+              </a>
             </div>
-            </a>
-          </div>
-          <div style="width: 32%;">
-            <a href="#" style="text-decoration: none; width: 100%; display: inline-block;">
-            <img src="images/zwimg/pro6.png"  style="width: 100%;" alt="Monstera">
-            <div class="product-info" style="display: flex; justify-content: space-between;">
-              <div class="product-title" style="width: 70%;">Spathiphyllum Peace Lily Sweet Romano</div>
-              <div class="price-badge" style="height: 26px;">$31.45</div>
+            <div class="pc-orderlistbox">
+              <a href="#" style="text-decoration: none; width: 100%; display: inline-block;">
+              <img src="images/zwimg/pro0.png" style="width: 100%;" alt="Monstera">
+              <div class="product-info" style="display: flex; justify-content: space-between; height: 68px;">
+                <div class="product-title" style="width: 60%;">Ctenanthe Golden Mosaic</div>
+                <div class="price-badge" style="height: 26px;">$14.99</div>
+              </div>
+              </a>
             </div>
-            </a>
-          </div>
-          <div style="width: 32%;">
-            <a href="#" style="text-decoration: none; width: 100%; display: inline-block;">
-            <img src="images/zwimg/pro7.png" style="width: 100%;" alt="Monstera">
-            <div class="product-info" style="display: flex; justify-content: space-between;">
-              <div class="product-title" style="width: 70%;">Vegetable Homalomena RubescensSkewers</div>
-              <div class="price-badge" style="height: 26px;">$14.99</div>
+            <div class="pc-orderlistbox">
+              <a href="#" style="text-decoration: none; width: 100%; display: inline-block;">
+              <img src="images/zwimg/pro4.png" style="width: 100%;" alt="Monstera">
+              <div class="product-info" style="display: flex; justify-content: space-between; height: 68px;">
+                <div class="product-title" style="width: 70%;">Syngonium Robusta</div>
+                <div class="price-badge" style="height: 26px;">$24.99</div>
+              </div>
+              </a>
             </div>
-            </a>
-          </div>
+          <!-- </div> -->
+          <!-- <div class="order-list"> -->
+            <div class="pc-orderlistbox">
+              <a href="#" style="text-decoration: none; width: 100%; display: inline-block;">
+              <img src="images/zwimg/pro5.png" style="width: 100%;" alt="Monstera">
+              <div class="product-info" style="display: flex; justify-content: space-between; height: 68px;">
+                <div class="product-title" style="width: 70%;">Polystichum Mother Shield Fern</div>
+                <div class="price-badge" style="height: 26px;">$45.00</div>
+              </div>
+              </a>
+            </div>
+            <div class="pc-orderlistbox">
+              <a href="#" style="text-decoration: none; width: 100%; display: inline-block;">
+              <img src="images/zwimg/pro6.png"  style="width: 100%;" alt="Monstera">
+              <div class="product-info" style="display: flex; justify-content: space-between; height: 68px;">
+                <div class="product-title" style="width: 70%;">Spathiphyllum Peace Lily Sweet Romano</div>
+                <div class="price-badge" style="height: 26px;">$31.45</div>
+              </div>
+              </a>
+            </div>
+            <div class="pc-orderlistbox">
+              <a href="#" style="text-decoration: none; width: 100%; display: inline-block;">
+              <img src="images/zwimg/pro7.png" style="width: 100%;" alt="Monstera">
+              <div class="product-info" style="display: flex; justify-content: space-between; height: 68px;">
+                <div class="product-title" style="width: 70%;">Vegetable Homalomena RubescensSkewers</div>
+                <div class="price-badge" style="height: 26px;">$14.99</div>
+              </div>
+              </a>
+            </div>
+          <!-- </div> -->
         </div>
         <div style="height: 50px;"></div>
 
@@ -273,6 +275,77 @@
     </footer>
   </div>
   <script>
+
+  // <div class="pc-orderlistbox">
+  //   <a href="productdetail1.html" style="text-decoration: none; width: 100%; display: inline-block;">
+  //   <img src="images/zwimg/pro1.png"  style="width: 100%;" alt="Monstera">
+  //   <div class="product-info" style="display: flex; justify-content: space-between; height: 68px;">
+  //     <div class="product-title" style="width: 60%;">Monstera Fruit Salad Plant Starter Plant</div>
+  //     <div class="price-badge" style="height: 26px;">$10.00</div>
+  //   </div>
+  //   </a>
+  // </div>
+
+  // <div class="pc-orderlistbox">
+  //   <a href="#" style="text-decoration: none; width: 100%; display: inline-block;">
+  //   <img src="images/zwimg/pro3.png" style="width: 100%;" alt="Monstera">
+  //   <div class="product-info" style="display: flex; justify-content: space-between; height: 68px;">
+  //     <div class="product-title" style="width: 70%;">Syngonium Red Beauty</div>
+  //     <div style="display: flex;">
+  //       <div style="height: 26px; color: #000; font-size: 12px; line-height: 26px; text-decoration: line-through;">$40.00</div>
+  //       <div class="price-badge" style="height: 26px; margin-left: 8px; background-color: #FFA3A3; color:#fff;">$20.00</div>
+  //     </div>
+  //   </div>
+  //   </a>
+  // </div>
+
+
+    var productListData = [
+      {proName:'Monstera Fruit Salad Plant Starter Plant',proPrice:'10.00',zkPrice:'0',proImg:'images/zwimg/pro1.png',lianjie:'productdetail1.html'},
+      {proName:'Lachenalia Quadricolour',proPrice:'15.00',zkPrice:'0',proImg:'images/zwimg/pro9.png',lianjie:'productdetail2.html'},
+      {proName:'Pothos Variegated Devils Ivy',proPrice:'45.00',zkPrice:'0',proImg:'images/zwimg/pro2.png',lianjie:'#'},
+      {proName:'Syngonium Red Beauty',proPrice:'20.00',zkPrice:'40.00',proImg:'images/zwimg/pro3.png',lianjie:'#'},
+      {proName:'Ctenanthe Golden Mosaic',proPrice:'14.99',zkPrice:'0',proImg:'images/zwimg/pro0.png',lianjie:'#'},
+      {proName:'Syngonium Robusta',proPrice:'24.99',zkPrice:'0',proImg:'images/zwimg/pro4.png',lianjie:'#'},
+      {proName:'Polystichum Mother Shield Fern',proPrice:'45.00',zkPrice:'0',proImg:'images/zwimg/pro5.png',lianjie:'#'},
+      {proName:'Spathiphyllum Peace Lily Sweet Romano',proPrice:'31.45',zkPrice:'0',proImg:'images/zwimg/pro6.png',lianjie:'#'},
+      {proName:'Vegetable Homalomena RubescensSkewers',proPrice:'14.99',zkPrice:'0',proImg:'images/zwimg/pro7.png',lianjie:'#'}
+    ]
+    function onSearch(){
+      var keyword = document.getElementById('iptSearch').value;
+      const resultArr = productListData.filter(item => item.proName.includes(keyword));
+      var resHtml = '';
+      resultArr.forEach((element,index) => {
+
+        if(Number(element.zkPrice) == 0){
+          resHtml += '<div class="pc-orderlistbox">';
+          resHtml += '  <a href="'+element.lianjie+'" style="text-decoration: none; width: 100%; display: inline-block;">';
+          resHtml += '  <img src="'+element.proImg+'"  style="width: 100%;" alt="Monstera">';
+          resHtml += '  <div class="product-info" style="display: flex; justify-content: space-between; height: 68px;">';
+          resHtml += '    <div class="product-title" style="width: 60%;">'+element.proName+'</div>';
+          resHtml += '    <div class="price-badge" style="height: 26px;">$'+element.proPrice+'</div>';
+          resHtml += '  </div>';
+          resHtml += '  </a>';
+          resHtml += '</div>';
+        }else{
+          resHtml += '<div class="pc-orderlistbox">';
+          resHtml += '  <a href="#" style="text-decoration: none; width: 100%; display: inline-block;">';
+          resHtml += '  <img src="'+element.proImg+'" style="width: 100%;" alt="Monstera">';
+          resHtml += '  <div class="product-info" style="display: flex; justify-content: space-between; height: 68px;">';
+          resHtml += '    <div class="product-title" style="width: 70%;">'+element.proName+'</div>';
+          resHtml += '    <div style="display: flex;">';
+          resHtml += '      <div style="height: 26px; color: #000; font-size: 12px; line-height: 26px; text-decoration: line-through;">$'+element.zkPrice+'</div>';
+          resHtml += '      <div class="price-badge" style="height: 26px; margin-left: 8px; background-color: #FFA3A3; color:#fff;">$'+element.proPrice+'</div>';
+          resHtml += '    </div>';
+          resHtml += '  </div>';
+          resHtml += '  </a>';
+          resHtml += '</div>';
+        }
+
+      });
+
+      document.getElementById('orderListHtml').innerHTML = resHtml;
+    }
     function onToUrl(itemUrl){
       window.location.href = itemUrl;
     }
