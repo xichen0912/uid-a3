@@ -9,76 +9,193 @@
   <link rel="stylesheet" href="combined-styles.css" />
 </head>
 <body>
-  <div class="top-search">
-    <input class="search-bar" type="text" placeholder="Search" />
-  </div>
-
-  <div class="container" style="padding-top: 36px;">
-    <h2 class="title" style="margin-bottom:20px;">My cart <span class="subtitle">(<span id="mycartNum">2</span> items)</span></h2>
-
-    <div class="address-box">
-      <p>DELIVER TO</p>
-      <p>581 Swanston Street VIC</p>
+  <div class="mobile" style="width: 100%;" id="mobile">
+    <div class="top-search">
+      <input class="search-bar" type="text" placeholder="Search" />
     </div>
 
-    <h3 style="margin-bottom: 20px;">Shopping List</h3>
+    <div class="container" style="padding-top: 36px;">
+      <h2 class="title" style="margin-bottom:20px;">My cart <span class="subtitle">(<span id="mycartNum">2</span> items)</span></h2>
 
-    <div class="cart-item">
-      <div class="cart-info">
-        <img src="images/detail1.png" alt="Product 1" />
-        <div style="height: 80px;">
-          <div class="cart-name" style="line-height: 16px;">Lachenalia Quadricolour</div>
-          <div class="cart-price">$10</div>
-          <div class="qty-controls" style="margin-top: 8px;">
-            <button onclick="reduce('pro1')">-</button><span id="pro1" data-price="10">1</span><button onclick="add('pro1')">+</button>
+      <div class="address-box">
+        <p>DELIVER TO</p>
+        <p>581 Swanston Street VIC</p>
+      </div>
+
+      <h3 style="margin-bottom: 20px;">Shopping List</h3>
+
+      <div class="cart-item">
+        <div class="cart-info">
+          <img src="images/detail1.png" alt="Product 1" />
+          <div style="height: 80px;">
+            <div class="cart-name" style="line-height: 16px;">Lachenalia Quadricolour</div>
+            <div class="cart-price">$10</div>
+            <div class="qty-controls" style="margin-top: 8px;">
+              <button onclick="reduce('pro1')">-</button><span id="pro1" data-price="10">1</span><button onclick="add('pro1')">+</button>
+            </div>
           </div>
         </div>
+        <i class="fas fa-trash cart-delete" onclick="del(this)"></i>
       </div>
-      <i class="fas fa-trash cart-delete" onclick="del(this)"></i>
-    </div>
 
-    <div class="cart-item">
-      <div class="cart-info">
-        <img src="images/monstera-fruit-salad-plant-pplmonfsa.jpg" alt="Product 2" />
-        <div style="height: 80px;">
-          <div class="cart-name" style="line-height: 16px;">Monstera Fruit Salad Plant</div>
-          <div class="cart-price">$15</div>
-          <div class="qty-controls" style="margin-top: 8px;">
-            <button onclick="reduce('pro2')">-</button><span id="pro2" data-price="15">1</span><button onclick="add('pro2')">+</button>
+      <div class="cart-item">
+        <div class="cart-info">
+          <img src="images/monstera-fruit-salad-plant-pplmonfsa.jpg" alt="Product 2" />
+          <div style="height: 80px;">
+            <div class="cart-name" style="line-height: 16px;">Monstera Fruit Salad Plant</div>
+            <div class="cart-price">$15</div>
+            <div class="qty-controls" style="margin-top: 8px;">
+              <button onclick="reduce('pro2')">-</button><span id="pro2" data-price="15">1</span><button onclick="add('pro2')">+</button>
+            </div>
           </div>
         </div>
+        <i class="fas fa-trash cart-delete" onclick="del(this)"></i>
       </div>
-      <i class="fas fa-trash cart-delete" onclick="del(this)"></i>
+
+      <div class="summary">
+        <h3>Order summary</h3>
+        <div class="summary-row"><span>Subtitle</span><span id="subtitle">$25</span></div>
+        <div class="summary-row"><span>Discount</span><span>0</span></div>
+        <div class="summary-row"><span>Delivery fee</span><span>0</span></div>
+        <div class="summary-row"><strong>Total:</strong><strong id="totalsl">$25</strong></div>
+        <div class="divider"></div>
+
+        <div class="promo">
+          <input type="text" placeholder="Add promo code" />
+          <button>Apply</button>
+        </div>
+        <button class="checkout-btn" onclick="toCheckout()">Checkout</button>
+      </div>
     </div>
 
-    <div class="summary">
-      <h3>Order summary</h3>
-      <div class="summary-row"><span>Subtitle</span><span id="subtitle">$25</span></div>
-      <div class="summary-row"><span>Discount</span><span>0</span></div>
-      <div class="summary-row"><span>Delivery fee</span><span>0</span></div>
-      <div class="summary-row"><strong>Total:</strong><strong id="totalsl">$25</strong></div>
-      <div class="divider"></div>
-
-      <div class="promo">
-        <input type="text" placeholder="Add promo code" />
-        <button>Apply</button>
-      </div>
-      <button class="checkout-btn" onclick="toCheckout()">Checkout</button>
+    <div class="bottom-nav">
+      <a href="index.html"><i class="fa fa-home"></i></a>
+      <a href="categorylist.html"><i class="fa fa-credit-card"></i></a>
+      <a href="productlist.html"><i class="fa fa-compass"></i></a>
+      <i class="fa fa-shopping-cart">
+        <span class="cart-badge" id="mycartNum2">2</span>
+      </i>
+      <i class="fa fa-user"></i>
     </div>
   </div>
+  <div class="pcduan" style="width: 1368px; margin: auto;" id="pcduan">
+    <div class="pc-header">
+      <div class="pc-header-item" onclick="onToUrl('index.html')">Home</div>
+      <div class="pc-header-item" onclick="onToUrl('index.html')">About</div>
+      <div class="pc-header-item">
+        <div style="height: 16px;"><img src="images/zwimg/xin.png" style="width: 18px; height: 16px;" /></div>
+        <div style="margin-left: 10px;">My Favorites</div>
+      </div>
+      <div class="pc-header-item" onclick="onToUrl('cart2.html')">
+        <div style="height: 16px;"><img src="images/zwimg/cart.png" style="width: 20px; height: 20px;" /></div>
+        <div style="margin-left: 10px;">My Cart</div>        
+      </div>
+      <div class="pc-header-item pc-header-ative">Contact us</div>
+    </div>
 
-  <div class="bottom-nav">
-    <a href="index.html"><i class="fa fa-home"></i></a>
-    <a href="categorylist.html"><i class="fa fa-credit-card"></i></a>
-    <a href="productlist.html"><i class="fa fa-compass"></i></a>
-    <i class="fa fa-shopping-cart">
-      <span class="cart-badge" id="mycartNum2">2</span>
-    </i>
-    <i class="fa fa-user"></i>
+    <div class="pc-main" style="background: none; overflow: auto; position: relative;">
+        <div style="padding: 30px;">
+          <div style="display: flex;">
+            <div style="width: 60%;">
+              <div style="display: flex; justify-content: space-between;">
+                <h2 class="title" style="margin-bottom:20px;">My cart <span class="subtitle">(<span id="mycartNum">2</span> items)</span></h2>
+                <div>
+                  <img src="images/zwimg/guan.png" style="width: 80px; height: auto; margin-right: 20px;" />
+                </div>
+              </div>
+              <div style="display: flex; justify-content: space-between; align-items: center;">
+                <div class="pc-details-box">
+                  <p>DELIVER TO</p>
+                  <p>581 Swanston Street VIC</p>
+                </div>
+                <div>
+                  <img src="images/zwimg/youjt.png" style="width: 27px; height: 14px; margin-right: 48px;" />
+                </div>
+              </div>
+              <h3 style="margin-bottom: 10px;">Shopping List</h3>
+
+              <div class="cart-item" style=" width: 80%;">
+                <div class="cart-info">
+                  <img src="images/detail1.png" style="width: 150px; height: 112px;" alt="Product 1" />
+                  <div style="height: 112px;">
+                    <div class="cart-name" style="line-height: 16px;">Lachenalia Quadricolour</div>
+                    <div class="cart-price">$10</div>
+                    
+                  </div>
+                </div>
+                <div style="display: flex; align-items: center;">
+                  <div class="qty-controls" style="margin-top: 0px; margin-right: 20px;">
+                    <button onclick="reduce('pro3')">-</button>
+                    <span id="pro3" data-price="10">1</span>
+                    <button onclick="add('pro3')">+</button>
+                  </div>
+                  <img src="images/zwimg/del.png" onclick="del2(this)" style="width: 30px; height: 30px;" />
+                </div>
+              </div>
+
+              <div class="cart-item" style=" width: 80%;">
+                <div class="cart-info">
+                  <img src="images/monstera-fruit-salad-plant-pplmonfsa.jpg" style="width: 150px; height: 112px;" alt="Product 2" />
+                  <div style="height: 112px;">
+                    <div class="cart-name" style="line-height: 16px;">Monstera Fruit Salad Plant</div>
+                    <div class="cart-price">$15</div>
+                    
+                  </div>
+                </div>
+                <div style="display: flex; align-items: center;">
+                  <div class="qty-controls" style="margin-top: 0px; margin-right: 20px;">
+                    <button onclick="reduce('pro4')">-</button>
+                    <span id="pro4" data-price="15">1</span>
+                    <button onclick="add('pro4')">+</button>
+                  </div>
+                  <img src="images/zwimg/del.png" onclick="del2(this)" style="width: 30px; height: 30px;" />
+                </div>
+              </div>
+
+            </div>
+            <div style="width: 40%;">
+              <div class="summary">
+                <h3>Order summary</h3>
+                <div class="summary-row"><span>Subtitle</span><span id="subtitle">$25</span></div>
+                <div class="summary-row"><span>Discount</span><span>0</span></div>
+                <div class="summary-row"><span>Delivery fee</span><span>0</span></div>
+                <div class="divider"></div>
+                <div class="summary-row"><strong>Total:</strong><strong id="totalsl">$25</strong></div>
+                
+                <h3>Detail</h3>
+                <div class="promo" style="display: flex; justify-content: space-between;">
+                  <div style="width: 45%;"><input type="text" placeholder="Given name" style="width: 100%; padding-left: 20px; background-color: #f0f0f0;" /></div>
+                  <div style="width: 50%;"><input type="text" placeholder="Surname" style="width: 100%; padding-left: 20px; background-color: #f0f0f0;" /></div>
+                </div>
+                <div class="promo">
+                 <input type="text" placeholder="Phone number" style="width: 100%; padding-left: 20px; background-color: #f0f0f0;" />
+                </div>
+                <div class="promo">
+                 <input type="text" placeholder="Email" style="width: 100%; padding-left: 20px; background-color: #f0f0f0;" />
+                </div>
+                <div class="promo" style="display: flex; justify-content: space-between; margin-top: 40px;">
+                  <div style="width: 65%;">
+                    <input type="text" placeholder="Add promo code" style="width: 100%; padding-left: 20px; " />
+                  </div>
+                  <div style="width: 30%;">
+                    <button style="width: 100%;">Apply</button>
+                  </div>
+                </div>
+                <button class="checkout-btn" onclick="toCheckout()" style="height: 40px; padding: 0px; line-height: 40px;">Checkout</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="pc-footer"></div>
+    </div>
   </div>
   <script>
     localStorage.setItem('totalPrice', 25);
     localStorage.setItem('totalNum', 2);
+    function onToUrl(itemUrl){
+      window.location.href = itemUrl;
+    }
     function add(item){
       var proVal = document.getElementById(item).innerText;
       document.getElementById(item).innerText = (Number(proVal) + 1);
@@ -117,6 +234,10 @@
     }
     function del(benlei){
       benlei.parentNode.remove();
+      this.Total();
+    }
+    function del2(benlei){
+      benlei.parentNode.parentNode.remove();
       this.Total();
     }
     function toCheckout() {

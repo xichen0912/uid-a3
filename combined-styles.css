@@ -1713,4 +1713,23 @@ body {
   .pc-footer{
     background-color: #4CAF84; height: 100px; width: 100%; position: absolute; bottom: 0px;
   }
+  .pc-details-box {
+    padding: 0px;
+    margin-bottom: 20px;
+  }
+  .pc-details-box p:first-child {
+    color: #e95d0f;
+    font-weight: 600;
+    font-size: 14px;
+  }
+
+  .pc-details-box p:last-child {
+    font-weight: 600;
+    font-size: 16px;
+  }
+
+  .pc-details-box h3 {
+    margin-bottom: 12px;
+  }
+
 }
