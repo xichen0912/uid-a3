@@ -15,7 +15,7 @@
     </div>
 
     <div class="container" style="padding-top: 36px;">
-      <h2 class="title" style="margin-bottom:20px;">My cart <span class="subtitle">(<span id="mycartNum">2</span> items)</span></h2>
+      <h2 class="title" style="margin-bottom:20px;">My cart <span class="subtitle">(<span id="mycartNum">0</span> items)</span></h2>
 
       <div class="address-box">
         <p>DELIVER TO</p>
@@ -24,32 +24,33 @@
 
       <h3 style="margin-bottom: 20px;">Shopping List</h3>
 
-      <div class="cart-item">
-        <div class="cart-info">
-          <img src="images/detail1.png" alt="Product 1" />
-          <div style="height: 80px;">
-            <div class="cart-name" style="line-height: 16px;">Lachenalia Quadricolour</div>
-            <div class="cart-price">$10</div>
-            <div class="qty-controls" style="margin-top: 8px;">
-              <button onclick="reduce('pro1')">-</button><span id="pro1" data-price="10">1</span><button onclick="add('pro1')">+</button>
+      <div style="width: 100%;" id="shoppingListMobile">
+        <!-- <div class="cart-item">
+          <div class="cart-info">
+            <img src="images/detail1.png" alt="Product 1" />
+            <div style="height: 80px;">
+              <div class="cart-name" style="line-height: 16px;">Lachenalia Quadricolour</div>
+              <div class="cart-price">$10</div>
+              <div class="qty-controls" style="margin-top: 8px;">
+                <button onclick="reduce('pro1')">-</button><span id="pro1" data-price="10">1</span><button onclick="add('pro1')">+</button>
+              </div>
             </div>
           </div>
+          <i class="fas fa-trash cart-delete" onclick="del(this)"></i>
         </div>
-        <i class="fas fa-trash cart-delete" onclick="del(this)"></i>
-      </div>
-
-      <div class="cart-item">
-        <div class="cart-info">
-          <img src="images/monstera-fruit-salad-plant-pplmonfsa.jpg" alt="Product 2" />
-          <div style="height: 80px;">
-            <div class="cart-name" style="line-height: 16px;">Monstera Fruit Salad Plant</div>
-            <div class="cart-price">$15</div>
-            <div class="qty-controls" style="margin-top: 8px;">
-              <button onclick="reduce('pro2')">-</button><span id="pro2" data-price="15">1</span><button onclick="add('pro2')">+</button>
+        <div class="cart-item">
+          <div class="cart-info">
+            <img src="images/monstera-fruit-salad-plant-pplmonfsa.jpg" alt="Product 2" />
+            <div style="height: 80px;">
+              <div class="cart-name" style="line-height: 16px;">Monstera Fruit Salad Plant</div>
+              <div class="cart-price">$15</div>
+              <div class="qty-controls" style="margin-top: 8px;">
+                <button onclick="reduce('pro2')">-</button><span id="pro2" data-price="15">1</span><button onclick="add('pro2')">+</button>
+              </div>
             </div>
           </div>
-        </div>
-        <i class="fas fa-trash cart-delete" onclick="del(this)"></i>
+          <i class="fas fa-trash cart-delete" onclick="del(this)"></i>
+        </div> -->
       </div>
 
       <div class="summary">
@@ -76,7 +77,7 @@
       <a href="categorylist.html"><i class="fa fa-credit-card"></i></a>
       <a href="productlist.html"><i class="fa fa-compass"></i></a>
       <i class="fa fa-shopping-cart">
-        <span class="cart-badge" id="mycartNum2">2</span>
+        <span class="cart-badge" id="mycartNum2">0</span>
       </i>
       <i class="fa fa-user"></i>
     </div>
@@ -116,41 +117,42 @@
               </div>
               <h3 style="margin-bottom: 10px;">Shopping List</h3>
 
-              <div class="cart-item" style=" width: 80%;">
-                <div class="cart-info">
-                  <img src="images/detail1.png" style="width: 150px; height: 112px;" alt="Product 1" />
-                  <div style="height: 112px;">
-                    <div class="cart-name" style="line-height: 16px;">Lachenalia Quadricolour</div>
-                    <div class="cart-price">$10</div>
-                    
+              <div style="width: 100%;" id="shoppingList">
+                <div class="cart-item" style=" width: 80%;">
+                  <div class="cart-info">
+                    <img src="images/detail1.png" style="width: 150px; height: 112px;" alt="Product 1" />
+                    <div style="height: 112px;">
+                      <div class="cart-name" style="line-height: 16px;">Lachenalia Quadricolour</div>
+                      <div class="cart-price">$10</div>
+                      
+                    </div>
+                  </div>
+                  <div style="display: flex; align-items: center;">
+                    <div class="qty-controls" style="margin-top: 0px; margin-right: 20px;">
+                      <button onclick="reduce2('pro3')">-</button>
+                      <span id="pro3" data-price="10" style="padding: 0px 8px;">1</span>
+                      <button onclick="add2('pro3')">+</button>
+                    </div>
+                    <img src="images/zwimg/del.png" onclick="del2(this)" style="width: 30px; height: 30px;" />
                   </div>
                 </div>
-                <div style="display: flex; align-items: center;">
-                  <div class="qty-controls" style="margin-top: 0px; margin-right: 20px;">
-                    <button onclick="reduce2('pro3')">-</button>
-                    <span id="pro3" data-price="10" style="padding: 0px 8px;">1</span>
-                    <button onclick="add2('pro3')">+</button>
+                <div class="cart-item" style=" width: 80%;">
+                  <div class="cart-info">
+                    <img src="images/monstera-fruit-salad-plant-pplmonfsa.jpg" style="width: 150px; height: 112px;" alt="Product 2" />
+                    <div style="height: 112px;">
+                      <div class="cart-name" style="line-height: 16px;">Monstera Fruit Salad Plant</div>
+                      <div class="cart-price">$15</div>
+                      
+                    </div>
                   </div>
-                  <img src="images/zwimg/del.png" onclick="del2(this)" style="width: 30px; height: 30px;" />
-                </div>
-              </div>
-
-              <div class="cart-item" style=" width: 80%;">
-                <div class="cart-info">
-                  <img src="images/monstera-fruit-salad-plant-pplmonfsa.jpg" style="width: 150px; height: 112px;" alt="Product 2" />
-                  <div style="height: 112px;">
-                    <div class="cart-name" style="line-height: 16px;">Monstera Fruit Salad Plant</div>
-                    <div class="cart-price">$15</div>
-                    
+                  <div style="display: flex; align-items: center;">
+                    <div class="qty-controls" style="margin-top: 0px; margin-right: 20px;">
+                      <button onclick="reduce2('pro4')">-</button>
+                      <span id="pro4" data-price="15" style="padding: 0px 8px;">1</span>
+                      <button onclick="add2('pro4')">+</button>
+                    </div>
+                    <img src="images/zwimg/del.png" onclick="del2(this)" style="width: 30px; height: 30px;" />
                   </div>
-                </div>
-                <div style="display: flex; align-items: center;">
-                  <div class="qty-controls" style="margin-top: 0px; margin-right: 20px;">
-                    <button onclick="reduce2('pro4')">-</button>
-                    <span id="pro4" data-price="15" style="padding: 0px 8px;">1</span>
-                    <button onclick="add2('pro4')">+</button>
-                  </div>
-                  <img src="images/zwimg/del.png" onclick="del2(this)" style="width: 30px; height: 30px;" />
                 </div>
               </div>
 
@@ -194,95 +196,6 @@
       © 2025 GardenExpress All rights reserved.
     </footer>
   </div>
-  <script>
-    localStorage.setItem('totalPrice', 25);
-    localStorage.setItem('totalNum', 2);
-    function onToUrl(itemUrl){
-      window.location.href = itemUrl;
-    }
-    function add(item){
-      var proVal = document.getElementById(item).innerText;
-      document.getElementById(item).innerText = (Number(proVal) + 1);
-      this.Total();
-    }
-    function reduce(item){
-      var proVal = document.getElementById(item).innerText;
-      if((Number(proVal) - 1) > 0){
-        document.getElementById(item).innerText = (Number(proVal) - 1);
-        this.Total();
-      }
-    }
-    function add2(item){
-      var proVal = document.getElementById(item).innerText;
-      document.getElementById(item).innerText = (Number(proVal) + 1);
-      this.Total2();
-    }
-    function reduce2(item){
-      var proVal = document.getElementById(item).innerText;
-      if((Number(proVal) - 1) > 0){
-        document.getElementById(item).innerText = (Number(proVal) - 1);
-        this.Total2();
-      }
-    }
-    function Total(){
-      var totalNum = 0;
-      var totalPrice = 0;
-      const element = document.getElementById("pro1");
-      if (element) {
-        var attributeValue = element.getAttribute("data-price");
-        var shuliang = Number(document.getElementById('pro1').innerText);
-        totalNum = shuliang;
-        totalPrice = Number(attributeValue) * shuliang;
-      }
-      const element2 = document.getElementById("pro2");
-      if (element2) {
-        var attributeValue = element2.getAttribute("data-price");
-        var shuliang = Number(document.getElementById('pro2').innerText);
-        totalNum = totalNum + shuliang;
-        totalPrice = (Number(attributeValue) * shuliang) + totalPrice;
-      }
-      document.getElementById('mycartNum').innerText = totalNum;
-      document.getElementById('mycartNum2').innerText = totalNum;
-      document.getElementById('totalsl').innerHTML = '$'+ totalPrice;
-      document.getElementById('subtitle').innerHTML = '$'+ totalPrice;
-      localStorage.setItem('totalPrice', totalPrice);
-      localStorage.setItem('totalNum', totalNum);
-    }
-    function Total2(){
-      var totalNum = 0;
-      var totalPrice = 0;
-      const element = document.getElementById("pro3");
-      if (element) {
-        var attributeValue = element.getAttribute("data-price");
-        var shuliang = Number(document.getElementById('pro3').innerText);
-        totalNum = shuliang;
-        totalPrice = Number(attributeValue) * shuliang;
-      }
-      const element2 = document.getElementById("pro4");
-      if (element2) {
-        var attributeValue = element2.getAttribute("data-price");
-        var shuliang = Number(document.getElementById('pro4').innerText);
-        totalNum = totalNum + shuliang;
-        totalPrice = (Number(attributeValue) * shuliang) + totalPrice;
-      }
-      document.getElementById('mycartNum3').innerText = totalNum;
-      // document.getElementById('mycartNum2').innerText = totalNum;
-      document.getElementById('totalsl2').innerHTML = '$'+ totalPrice;
-      document.getElementById('subtitle2').innerHTML = '$'+ totalPrice;
-      localStorage.setItem('totalPrice', totalPrice);
-      localStorage.setItem('totalNum', totalNum);
-    }
-    function del(benlei){
-      benlei.parentNode.remove();
-      this.Total();
-    }
-    function del2(benlei){
-      benlei.parentNode.parentNode.remove();
-      this.Total2();
-    }
-    function toCheckout() {
-        window.location.href = 'checkout.html';
-    };
-  </script>
+  <script src="script.js"></script>
 </body>
 </html>
