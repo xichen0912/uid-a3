@@ -8,7 +8,7 @@
 </head>
 <body>
   <div class="mobile" style="width: 100%;" id="mobile">
-  <header class="search-header">
+  <header class="search-header" onclick="onToOrderNow()">
     <input type="text" class="search-bar" placeholder="Search" />
   </header>
   </div>
@@ -48,6 +48,9 @@
     © 2025 GardenExpress All rights reserved.
   </footer>
    <script>
+    function onToOrderNow() {
+        window.location.href = 'productlist.html';
+    };
     function getTotalPrice(){
       var totalPrice = localStorage.getItem('totalPrice');
       var emailVal = localStorage.getItem('Email');

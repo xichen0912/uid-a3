@@ -126,6 +126,9 @@ function del2(id){
 function toCheckout() {
     window.location.href = 'checkout.html';
 };
+function onToOrderNow() {
+    window.location.href = 'productlist.html';
+};
 
 function lordJiaz(){
     var myArray = [];

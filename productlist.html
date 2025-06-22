@@ -13,7 +13,7 @@
 
     <!-- Search Bar -->
     <div class="top-search">
-      <input class="search-bar" type="text" placeholder="Search" />
+      <input class="search-bar" id="iptSearchMob" type="text" placeholder="Search" />
     </div>
 
     <!-- Category Icons -->
@@ -48,7 +48,7 @@
         <h2>Featured Products</h2>
         <a href="#" style="margin-bottom: 10px;">View all</a>
       </div>
-      <div class="product-list-vertical">
+      <div class="product-list-vertical" id="orderListHtmlMob">
         <div class="product-card-vertical">
           <a href="productdetail1.html" style="text-decoration: none;">
           <img src="images/monstera-fruit-salad-plant-pplmonfsa.jpg" alt="Monstera">
@@ -69,7 +69,7 @@
           </a>
         </div>
         <div class="product-card-vertical">
-          <a href="productdetail1.html" style="text-decoration: none;">
+          <a href="#" style="text-decoration: none;">
             <img src="images/Syngonium-Red-Beauty-1-P10SYNRBE.jpg" alt="Syngonium">
             <div class="product-info">
               <div class="product-title">Syngonium Red Beauty</div>
@@ -275,31 +275,13 @@
     </footer>
   </div>
   <script>
-
-  // <div class="pc-orderlistbox">
-  //   <a href="productdetail1.html" style="text-decoration: none; width: 100%; display: inline-block;">
-  //   <img src="images/zwimg/pro1.png"  style="width: 100%;" alt="Monstera">
-  //   <div class="product-info" style="display: flex; justify-content: space-between; height: 68px;">
-  //     <div class="product-title" style="width: 60%;">Monstera Fruit Salad Plant Starter Plant</div>
-  //     <div class="price-badge" style="height: 26px;">$10.00</div>
-  //   </div>
-  //   </a>
-  // </div>
-
-  // <div class="pc-orderlistbox">
-  //   <a href="#" style="text-decoration: none; width: 100%; display: inline-block;">
-  //   <img src="images/zwimg/pro3.png" style="width: 100%;" alt="Monstera">
-  //   <div class="product-info" style="display: flex; justify-content: space-between; height: 68px;">
-  //     <div class="product-title" style="width: 70%;">Syngonium Red Beauty</div>
-  //     <div style="display: flex;">
-  //       <div style="height: 26px; color: #000; font-size: 12px; line-height: 26px; text-decoration: line-through;">$40.00</div>
-  //       <div class="price-badge" style="height: 26px; margin-left: 8px; background-color: #FFA3A3; color:#fff;">$20.00</div>
-  //     </div>
-  //   </div>
-  //   </a>
-  // </div>
-
-
+    var productListDataMob = [
+      {proName:'Monstera Fruit Salad Plant Starter Plant',proPrice:'10.00',zkPrice:'0',proImg:'images/monstera-fruit-salad-plant-pplmonfsa.jpg',lianjie:'productdetail1.html'},
+      {proName:'Lachenalia Quadricolour',proPrice:'15.00',zkPrice:'0',proImg:'images/Lachenalia-Quadricolour-PKLACQUA-1.jpg',lianjie:'productdetail2.html'},
+      {proName:'Syngonium Red Beauty',proPrice:'20.00',zkPrice:'40.00',proImg:'images/Syngonium-Red-Beauty-1-P10SYNRBE.jpg',lianjie:'#'},
+      {proName:'Begonia Gremlin',proPrice:'31.45',zkPrice:'0',proImg:'images/Begonia-Gremlin-P10BEGGRE.jpg',lianjie:'#'}
+    ];
+    
     var productListData = [
       {proName:'Monstera Fruit Salad Plant Starter Plant',proPrice:'10.00',zkPrice:'0',proImg:'images/zwimg/pro1.png',lianjie:'productdetail1.html'},
       {proName:'Lachenalia Quadricolour',proPrice:'15.00',zkPrice:'0',proImg:'images/zwimg/pro9.png',lianjie:'productdetail2.html'},
@@ -311,9 +293,49 @@
       {proName:'Spathiphyllum Peace Lily Sweet Romano',proPrice:'31.45',zkPrice:'0',proImg:'images/zwimg/pro6.png',lianjie:'#'},
       {proName:'Vegetable Homalomena RubescensSkewers',proPrice:'14.99',zkPrice:'0',proImg:'images/zwimg/pro7.png',lianjie:'#'}
     ]
+    
+    window.onload = function() {
+      var that = this;
+      document.getElementById('iptSearchMob').addEventListener('input', function(event) {
+        that.onSearchMob(event.target.value);
+      });
+    };
+    
+    function onSearchMob(keyword){
+      const resultArr = productListDataMob.filter(item => item.proName.toLowerCase().includes(keyword.toLowerCase()));
+      var resHtml = '';
+      resultArr.forEach((element,index) => {
+        if(Number(element.zkPrice) == 0){
+          resHtml += '<div class="product-card-vertical">';
+          resHtml += '  <a href="'+element.lianjie+'" style="text-decoration: none;">';
+          resHtml += '  <img src="'+element.proImg+'" alt="Monstera">';
+          resHtml += '  <div class="product-info">';
+          resHtml += '    <div class="product-title">'+element.proName+'</div>';
+          resHtml += '    <div class="price-badge">$'+element.proPrice+'</div>';
+          resHtml += '  </div>';
+          resHtml += '  </a>';
+          resHtml += '</div>';
+        }else{
+          resHtml += '<div class="product-card-vertical">';
+          resHtml += '  <a href="#" style="text-decoration: none;">';
+          resHtml += '    <img src="'+element.proImg+'" alt="Syngonium">';
+          resHtml += '    <div class="product-info">';
+          resHtml += '      <div class="product-title">'+element.proName+'</div>';
+          resHtml += '      <div class="price-row">';
+          resHtml += '        <span class="old-price">$'+element.zkPrice+'</span>';
+          resHtml += '        <span class="discount-badge">$'+element.proPrice+'</span>';
+          resHtml += '      </div>';
+          resHtml += '    </div>';
+          resHtml += '  </a>';
+          resHtml += '</div>';
+        }
+      });
+
+      document.getElementById('orderListHtmlMob').innerHTML = resHtml;
+    }
     function onSearch(){
       var keyword = document.getElementById('iptSearch').value;
-      const resultArr = productListData.filter(item => item.proName.includes(keyword));
+      const resultArr = productListData.filter(item => item.proName.toLowerCase().includes(keyword.toLowerCase()));
       var resHtml = '';
       resultArr.forEach((element,index) => {
 

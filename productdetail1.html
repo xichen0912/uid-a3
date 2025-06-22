@@ -10,7 +10,7 @@
 </head>
 <body>
   <div class="mobile" style="width: 100%;" id="mobile">
-    <div class="top-search">
+    <div class="top-search" onclick="onToOrderNow()">
       <input class="search-bar" type="text" placeholder="Search" />
     </div>
 
@@ -294,6 +294,9 @@
     </footer>
   </div>
   <script>
+    function onToOrderNow() {
+        window.location.href = 'productlist.html';
+    };
     function thumbsBug2(item,item2){
       document.getElementById('pro-main-img2').src = item;
       document.getElementById('proId').value = item2;
